@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TrucBidule : MonoBehaviour
 {
     [SerializeField] private GameObject heartPrefab;
-    [SerializeField] private Transform heartLayout;// doit avoir un horizontal layout 
+    [SerializeField] private Transform heartLayout; // doit avoir un horizontal layout 
 
     [SerializeField] private int maxLife = 10;
     [SerializeField] private int currentLife; 
@@ -29,7 +29,7 @@ public class TrucBidule : MonoBehaviour
             Destroy(child);
         }
         */
-        
+
         //en instancier le bon nombre de complet pour les paires de vies 
 
         // puis un demi pour la vie impaire
