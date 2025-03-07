@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Carre.prefab.meta
+guid: a3d358bc3f1be7e42ac81fe5b13a1454
+========
+guid: 81b885273753ebd498be38d14d73be00
+>>>>>>>> 7c44018bde20fcdb0a94218dbf24113ed7c9e23b:Assets/Prefabs/Player.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
