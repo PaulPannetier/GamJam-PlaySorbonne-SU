@@ -127,7 +127,7 @@ MonoBehaviour:
   drawGizmos: 1
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   walkSpeed: 10
   initSpeed: 0.33
   speedLerp: 20
@@ -137,10 +137,10 @@ MonoBehaviour:
   verticalRayLength: 0.3
   horizontalRayOffset: 0.7
   horizontalRayLength: 0.3
-  up: 122
+  up: 119
   down: 115
   right: 100
-  left: 113
+  left: 97
 --- !u!61 &8578191344543745601
 BoxCollider2D:
   m_ObjectHideFlags: 0
