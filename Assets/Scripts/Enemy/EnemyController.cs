@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     void Update()
     {
         currentState.UpdateState(this);
+        
     }
 
     

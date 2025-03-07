@@ -39,7 +39,7 @@ public class ChaseState : IEnemyState
         seeker = enemy.seeker;
         rb = enemy.rb;
 
-        //canStopChase = false;
+        canStopChase = false;
 
         updateTargetCoroutine = enemy.StartCoroutine(UpdateTargetRoutine(enemy));
         updatePathCoroutine = enemy.StartCoroutine(UpdatePathRoutine(enemy));
@@ -104,6 +104,8 @@ public class ChaseState : IEnemyState
             // Applique la vitesse calculée au Rigidbody2D
             rb.linearVelocity = velocity;
 
+            enemy.animator.SetFloat("Speed", velocity.sqrMagnitude);
+
             // Calcule la distance entre l'ennemi et le waypoint actuel
             float distance = Vector2.Distance(rb.position, path.vectorPath[currWp]);
 
@@ -118,6 +120,8 @@ public class ChaseState : IEnemyState
         {
             enemy.TransitionToState(enemy.attackState);
         }
+
+
     }
 
 
