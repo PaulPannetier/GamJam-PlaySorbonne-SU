@@ -17,7 +17,7 @@ public class CharController : MonoBehaviour
 
     [Header("Walk")]
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float speed;
+    [SerializeField] private float walkSpeed;
     [SerializeField, Range(0f, 1f)] private float initSpeed;
     [SerializeField] private float speedLerp;
 
@@ -51,7 +51,9 @@ public class CharController : MonoBehaviour
             return;
         }
 
+        float x = InputManager.GetKeyDown(right) ? 1f : (InputManager.GetKeyDown(left) ? -1f : 0f);
         float y = InputManager.GetKeyDown(up) ? 1f : (InputManager.GetKeyDown(down) ? -1f : 0f);
+        playerInput = new Inputs(x, y, (int)x.Sign(), (int)y.Sign());
     }
 
     private void LateUpdate()
@@ -75,11 +77,53 @@ public class CharController : MonoBehaviour
         downRightRay = Physics2D.Raycast(center + new Vector2(verticalRayOffset, -hitboxSize.y * 0.4f), Vector2.down, verticalRayLength, groundMask);
         downLeftRay = Physics2D.Raycast(center + new Vector2(-verticalRayOffset, -hitboxSize.y * 0.4f), Vector2.down, verticalRayLength, groundMask);
 
+        Walk();
 
-
-
+        HandleCollision();
 
         transform.position += (Vector3)velocity * Time.deltaTime;
+    }
+
+    private void Walk()
+    {
+        Vector2 current = velocity;
+        Vector2 targetVelocity = new Vector2(playerInput.rawX, playerInput.rawY);
+        targetVelocity.Normalize();
+        targetVelocity.x *= playerInput.x;
+        targetVelocity.y *= playerInput.y;
+        targetVelocity *= walkSpeed;
+
+        if (playerInput.rawX != 0 || playerInput.rawY != 0)
+        {
+            if((playerInput.x <= 0f && velocity.x >= 0f) || (playerInput.x >= 0f && velocity.x <= 0f))
+            {
+                velocity.x = 0f;
+            }
+            if ((playerInput.y <= 0f && velocity.y >= 0f) || (playerInput.y >= 0f && velocity.y <= 0f))
+            {
+                velocity.y = 0f;
+            }
+
+            if(playerInput.rawX != 0 && Mathf.Abs(velocity.x) < Mathf.Abs(targetVelocity.x) * initSpeed)
+            {
+                velocity.x = targetVelocity.x * initSpeed;
+            }
+            if (playerInput.rawY != 0 && Mathf.Abs(velocity.y) < Mathf.Abs(targetVelocity.y) * initSpeed)
+            {
+                velocity.y = targetVelocity.y * initSpeed;
+            }
+
+            velocity = Vector2.MoveTowards(velocity, targetVelocity, speedLerp * Time.deltaTime);
+        }
+        else
+        {
+            velocity = Vector2.zero;
+        }
+    }
+
+    private void HandleCollision()
+    {
+
     }
 
     private void OnValidate()
@@ -89,6 +133,7 @@ public class CharController : MonoBehaviour
         verticalRayLength = Mathf.Max(0f, verticalRayLength);
         horizontalRayOffset = Mathf.Max(0f, horizontalRayOffset);
         horizontalRayLength = Mathf.Max(0f, horizontalRayLength);
+        walkSpeed = Mathf.Max(0f, walkSpeed);
     }
 
     private void OnDrawGizmosSelected()
