@@ -2,11 +2,14 @@ using UnityEngine;
 using Pathfinding;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEditorInternal;
 
 [System.Serializable]
 public class ChaseState : IEnemyState
 {
+    [SerializeField] private float maxDetectionDistance = 20f;
     [SerializeField] private float chaseDistance = 10f;
+    [SerializeField] private float minChaseDuration = 1f;
 
     [SerializeField] public Transform target;
 
@@ -19,14 +22,13 @@ public class ChaseState : IEnemyState
     [SerializeField] private float attackRange = 2f;
 
     [SerializeField] private float attackStateCooldown = 0.2f;
-    private bool canTransitionToAttackState = false;
+    //private bool canTransitionToAttackState = false;
+    private bool canStopChase = false;
 
 
-    // Indice du waypoint actuel que l'ennemi essaie d'atteindre
     int currWp = 0;
 
     private Seeker seeker;
-    // Chemin calculé par le Seeker
     private Path path;
     private Rigidbody2D rb;
     private Coroutine updateTargetCoroutine;
@@ -37,15 +39,11 @@ public class ChaseState : IEnemyState
         seeker = enemy.seeker;
         rb = enemy.rb;
 
+        //canStopChase = false;
+
         updateTargetCoroutine = enemy.StartCoroutine(UpdateTargetRoutine(enemy));
         updatePathCoroutine = enemy.StartCoroutine(UpdatePathRoutine(enemy));
-
-    }
-
-    private IEnumerator Cooldown(bool boolean, float cooldown)
-    {
-
-        yield return new WaitForSeconds(cooldown);
+        enemy.Callback(CanStopChase, minChaseDuration);
 
     }
 
@@ -85,6 +83,11 @@ public class ChaseState : IEnemyState
 
         // Calcule la distance entre l'ennemi et le joueur
         float playerDistance = Vector2.Distance(target.transform.position, enemy.transform.position);
+
+        if (playerDistance > chaseDistance && canStopChase)
+        {
+            enemy.TransitionToState(enemy.patrolState);
+        }
 
         // Si le joueur est en dehors de la portée d'attaque = on le poursuit
         if (playerDistance > attackRange)
@@ -129,7 +132,7 @@ public class ChaseState : IEnemyState
 
     Transform UpdateTarget(EnemyController enemy)
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(enemy.transform.position, chaseDistance, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(enemy.transform.position, maxDetectionDistance, Vector2.zero);
 
         List<Transform> playersInRange = new List<Transform>();
         foreach (RaycastHit2D hit in hits)
@@ -172,7 +175,6 @@ public class ChaseState : IEnemyState
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
-    // Méthode appelée lorsque le Seeker a terminé de calculer un chemin
     void OnPathComplete(Path p)
     {
         // Si le calcul a réussi (pas d'erreur), met à jour le chemin et réinitialise l'indice du waypoint
@@ -181,5 +183,10 @@ public class ChaseState : IEnemyState
             path = p;
             currWp = 0;
         }
+    }
+
+    void CanStopChase()
+    {
+        canStopChase = true;
     }
 }

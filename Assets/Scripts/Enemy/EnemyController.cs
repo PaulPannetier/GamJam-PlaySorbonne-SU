@@ -3,7 +3,7 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamageable
 {
     
     [Header("State")]
@@ -12,15 +12,22 @@ public class EnemyController : MonoBehaviour
     public PatrolState patrolState;
     public ChaseState chaseState ;
     public AttackState attackState ;
+    public HurtState hurtState;
+    public DeathState deathState;
     /*
-    public DeathState deathState { get; private set; } = new DeathState();
     public StuntState stuntState { get; private set; } = new StuntState();
     */
+
+    [Header("LifeSystem")]
+    [SerializeField] private float maxLife = 10f;
+    [SerializeField] private float currentLife;
+
 
     [Header("Component")]
     
     [HideInInspector]public Seeker seeker;
     [HideInInspector]public Rigidbody2D rb;
+    [HideInInspector]public Animator animator;
 
     public Vector2 startPosition;
 
@@ -30,8 +37,11 @@ public class EnemyController : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         currentState = idleState;
         startPosition = transform.position;
+
+        currentLife = maxLife;
     }
 
     void Update()
@@ -51,5 +61,16 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(coolDown);
         callback();
+    }
+
+    public void TakeDamage(float amount)
+    { 
+        currentLife -= amount; 
+
+        if(currentLife <= 0)
+        {
+            TransitionToState(deathState);
+            
+        }
     }
 }
