@@ -5,10 +5,10 @@ public class FireExplosion : Spell
 {
     [SerializeField] private GameObject explosionPrefab; 
     [SerializeField] private float timeBeforeExplosion= 0.2f; 
-    [SerializeField] private float explosionRange = 3f;
     [SerializeField] private float timeBeforeDestroy = 2f;
     [SerializeField] private float timeBeforeDamage = 0.2f;
     [SerializeField] private float attackRange = 10f;
+    [SerializeField] private float explosionRange = 3f;
 
     private Transform target;
     public override void Cast(EnemyController enemy)

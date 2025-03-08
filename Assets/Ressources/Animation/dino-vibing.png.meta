@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 90702e3943f4d5d4c8f7ecaf05d720a3
+guid: 9325f6597801eb94398c6891cf3909a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2729769330830350393
-    second: gentilmarchant_idle_0
+      213: 2073033531873196434
+    second: dino-vibing_0
   - first:
-      213: -7808782214215897349
-    second: gentilmarchant_idle_1
+      213: -3421913353197401980
+    second: dino-vibing_1
   - first:
-      213: -562134683298894947
-    second: gentilmarchant_idle_2
+      213: -3847981976304300936
+    second: dino-vibing_2
   - first:
-      213: -2168070200299778384
-    second: gentilmarchant_idle_3
+      213: -2539945057467165910
+    second: dino-vibing_3
   - first:
-      213: 1746659863333155059
-    second: gentilmarchant_idle_4
+      213: -5627298190449788982
+    second: dino-vibing_4
   - first:
-      213: -7173738417022723389
-    second: gentilmarchant_idle_5
+      213: 9062347314856391105
+    second: dino-vibing_5
+  - first:
+      213: 5753154360425856592
+    second: dino-vibing_6
+  - first:
+      213: 778292318966074529
+    second: dino-vibing_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,12 +121,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gentilmarchant_idle_0
+      name: dino-vibing_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 8
-        width: 18
+        y: 7
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,19 +136,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93816e25eb612e520800000000000000
-      internalID: 2729769330830350393
+      spriteID: 29976ca8305e4cc10800000000000000
+      internalID: 2073033531873196434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gentilmarchant_idle_1
+      name: dino-vibing_1
       rect:
         serializedVersion: 2
         x: 39
-        y: 8
-        width: 18
+        y: 7
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfee549e2f1a1a390800000000000000
-      internalID: -7808782214215897349
+      spriteID: 488c0827febe280d0800000000000000
+      internalID: -3421913353197401980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gentilmarchant_idle_2
+      name: dino-vibing_2
       rect:
         serializedVersion: 2
         x: 71
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,19 +180,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9bea0edb75e238f0800000000000000
-      internalID: -562134683298894947
+      spriteID: 87cc640b7c8399ac0800000000000000
+      internalID: -3847981976304300936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gentilmarchant_idle_3
+      name: dino-vibing_3
       rect:
         serializedVersion: 2
         x: 103
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -196,19 +202,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0be8507c3a779e1e0800000000000000
-      internalID: -2168070200299778384
+      spriteID: a2319ac6d6d40ccd0800000000000000
+      internalID: -2539945057467165910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gentilmarchant_idle_4
+      name: dino-vibing_4
       rect:
         serializedVersion: 2
         x: 135
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -218,19 +224,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f0b76934e16d3810800000000000000
-      internalID: 1746659863333155059
+      spriteID: ac7ba094c12d7e1b0800000000000000
+      internalID: -5627298190449788982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gentilmarchant_idle_5
+      name: dino-vibing_5
       rect:
         serializedVersion: 2
         x: 167
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -240,8 +246,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ca99c5fae2c17c90800000000000000
-      internalID: -7173738417022723389
+      spriteID: 1c1fa355edce3cd70800000000000000
+      internalID: 9062347314856391105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dino-vibing_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 7
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e3c27c86f47df40800000000000000
+      internalID: 5753154360425856592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dino-vibing_7
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 7
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac43639dbc0dca00800000000000000
+      internalID: 778292318966074529
       vertices: []
       indices: 
       edges: []
