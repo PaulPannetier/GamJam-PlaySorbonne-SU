@@ -7775,6 +7775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layout: {x: 100, y: 0}
+  moveDuration: 0.5
   "rangeDeTest\xE0larriver": 0
   isInFuture: 0
   mainCamera: {fileID: 975384836}
