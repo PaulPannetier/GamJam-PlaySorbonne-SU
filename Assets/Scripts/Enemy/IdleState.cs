@@ -7,14 +7,14 @@ public class IdleState : IEnemyState
     [SerializeField] private float activationRange = 20f;
     public void EnterState(EnemyController enemy)
     {
-
+        enemy.TransitionToState(enemy.patrolState);
     }
 
     public void UpdateState(EnemyController enemy)
     {
         if (CheckPlayerInRange(enemy))
         {
-            enemy.TransitionToState(enemy.chaseState);
+            enemy.TransitionToState(enemy.patrolState);
         }
     }
 
