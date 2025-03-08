@@ -68,9 +68,10 @@ public class PlayerInventory : MonoBehaviour
 
     public bool TryBuy(Item item)
     {
-        if(nbCoins >= item.value)
+        if(nbCoins >= item.cost)
         {
             AddItem(item);
+            nbCoins -= item.cost;
             return true;
         }
         return false;
@@ -85,6 +86,7 @@ public class PlayerInventory : MonoBehaviour
                 return false;
 
             fightController.SetAttack(nbAttack, attack);
+            nbCoins -= cost;
             return true;
         }
         return false;

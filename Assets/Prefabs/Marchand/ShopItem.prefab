@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c2787203ead644cad9758d2d7e9cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionHitbox: {x: 0, y: 0}
+  detectionHitbox: {x: 1, y: 1}
   buyInput:
-    keysKeyboard: 
-    keyGamepad1: 
+    keysKeyboard: 62000000
+    keyGamepad1: 54010000
     keyGamepad2: 
     keyGamepad3: 
     keyGamepad4: 
-    controllerType: 0
+    controllerType: 6
   playerMask:
     serializedVersion: 2
     m_Bits: 512
