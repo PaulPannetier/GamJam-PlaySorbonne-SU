@@ -28,7 +28,10 @@ public class GunAttack : PlayerAttack
     {
         if (InputManager.IsGamePadConnected(ControllerType.Gamepad1))
         {
-            return characterController.GetCurrentDirection().normalized;
+            Vector2 dir = characterController.GetCurrentDirection();
+            if (dir.sqrMagnitude < 1e-5f)
+                return Vector2.right;
+            return dir.normalized;
         }
         return ((Vector2)Camera.main.ScreenToWorldPoint(InputManager.mousePosition) - (Vector2)transform.position).normalized;
     }

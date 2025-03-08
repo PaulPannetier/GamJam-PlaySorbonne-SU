@@ -128,9 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawGizmos: 1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
   walkSpeed: 10
   initSpeed: 0.33
   speedLerp: 20
@@ -236,7 +233,7 @@ MonoBehaviour:
     keyGamepad2: 
     keyGamepad3: 
     keyGamepad4: 
-    controllerType: 0
+    controllerType: 6
   attack1Offset: {x: 0.37, y: -0.3}
   attack2Offset: {x: -0.39, y: -0.3}
   _attack1: {fileID: 0}
