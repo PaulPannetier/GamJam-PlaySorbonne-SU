@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1771804690732465859}
   - component: {fileID: 8578191344543745601}
   - component: {fileID: 7759135174504131081}
+  - component: {fileID: 1897560642061528840}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,3 +210,34 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1897560642061528840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972280976306540443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a73c454274d3b42a6d821369e28082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAttack1:
+    keysKeyboard: 
+    keyGamepad1: 
+    keyGamepad2: 
+    keyGamepad3: 
+    keyGamepad4: 
+    controllerType: 0
+  inputAttack2:
+    keysKeyboard: 
+    keyGamepad1: 
+    keyGamepad2: 
+    keyGamepad3: 
+    keyGamepad4: 
+    controllerType: 0
+  attack1Offset: {x: 0.37, y: -0.3}
+  attack2Offset: {x: -0.39, y: -0.3}
+  _attack1: {fileID: 0}
+  _attack2: {fileID: 0}
+  drawGizmos: 1
