@@ -89,7 +89,6 @@ public class HealthController : MonoBehaviour
         {
             TakeDamage(1);
         }
-        UpdateUI();
     }
 
     
