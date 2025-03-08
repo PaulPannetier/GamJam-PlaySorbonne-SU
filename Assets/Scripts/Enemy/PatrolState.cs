@@ -11,9 +11,9 @@ public class PatrolState : IEnemyState
     [SerializeField] private float ChasePlayerRange = 10f;
     [SerializeField] private float speed = 120f;
     [SerializeField] private float nextWpDistance = 1f;
-    [SerializeField] private Vector2 timeRand = new Vector2(0.5f, 4f);
-    [SerializeField] private Vector2 randDistance = new Vector2(0.5f, 2f);
-
+    [SerializeField] private Vector2 timeRand = new Vector2(2f, 6f);
+    [SerializeField] private float randDistance = 2f;
+    [SerializeField] private List<Transform> spawnpoints = new List<Transform>();
     private Transform target;
 
 
@@ -25,6 +25,7 @@ public class PatrolState : IEnemyState
     private Coroutine detectPlayerCoroutine;
     private Coroutine MoveToRandomPointCoroutine;
 
+
     public void EnterState(EnemyController enemy)
     {
 
@@ -33,6 +34,7 @@ public class PatrolState : IEnemyState
 
         detectPlayerCoroutine = enemy.StartCoroutine(DetectPlayer(enemy));
         MoveToRandomPointCoroutine = enemy.StartCoroutine(GetNewPoint(enemy));
+
     }
 
     public void UpdateState(EnemyController enemy)
@@ -56,7 +58,7 @@ public class PatrolState : IEnemyState
         Vector2 smoothDirection = Vector2.Lerp(rb.linearVelocity.normalized, direction, 0.1f);
         Vector2 velocity = smoothDirection * speed * Time.fixedDeltaTime;
         rb.linearVelocity = velocity;
-        
+
         if (direction.x > 1e-3)
         {
             enemy.spriteRenderer.flipX = direction.x < 0;
@@ -147,9 +149,16 @@ public class PatrolState : IEnemyState
         // Vérifie si le Seeker est prêt à calculer un nouveau chemin
         if (seeker.IsDone())
         {
-            Vector2 targetPosition = (Vector2)enemy.transform.position + Random.PointInCircle(enemy.transform.position, randDistance.y);
-            // Demande un nouveau chemin du Seeker entre la position actuelle et la cible
-            seeker.StartPath(rb.position, targetPosition, OnPathComplete);
+            if (spawnpoints.Count > 0)
+            {
+                Vector2 targetPosition = (Vector2)enemy.transform.position + Random.PointInCircle(spawnpoints.GetRandom().position, randDistance);
+                seeker.StartPath(rb.position, targetPosition, OnPathComplete);
+            }
+            else
+            {
+                Vector2 targetPosition = (Vector2)enemy.transform.position + Random.PointInCircle(enemy.transform.position, randDistance);
+                seeker.StartPath(rb.position, targetPosition, OnPathComplete);
+            }
         }
     }
 
