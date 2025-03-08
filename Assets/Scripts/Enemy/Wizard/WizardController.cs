@@ -35,6 +35,7 @@ public class WizardController :  EnemyController , IDamageable
 
     public void TakeDamage(float amount)
     { 
+        Debug.Log("touergqe");
         lastState = currentState;
         currentLife -= amount; 
 
