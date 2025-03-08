@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Item : ScriptableObject
 {
     [SerializeField] private List<ItemEffect> effects;
-    public float value;
+    public int cost;
     public Sprite icon;
 
     public void OnAttach(PlayerFightController playerFightController)

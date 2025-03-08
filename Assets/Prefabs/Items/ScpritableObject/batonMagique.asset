@@ -15,4 +15,5 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: abebed6f76cf367418129c6bbdaa1931, type: 2}
   - {fileID: 11400000, guid: b610f59956693584f890652dbbc93722, type: 2}
-  value: 10
+  cost: 2
+  icon: {fileID: 5884984484699182838, guid: 97dbf8353956a9a4a867df287a552450, type: 3}

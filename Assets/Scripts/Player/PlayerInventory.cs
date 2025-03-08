@@ -2,7 +2,6 @@ using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
 using System.Collections.Generic;
-using System;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private LayerMask collectableMask;
     [SerializeField] private float collectableRadius;
 
-    [SerializeField, ShowOnly] private int nbCoins;
+    [SerializeField] private int nbCoins;
 
     private void Awake()
     {
@@ -69,9 +68,10 @@ public class PlayerInventory : MonoBehaviour
 
     public bool TryBuy(Item item)
     {
-        if(nbCoins >= item.value)
+        if(nbCoins >= item.cost)
         {
             AddItem(item);
+            nbCoins -= item.cost;
             return true;
         }
         return false;
@@ -86,6 +86,7 @@ public class PlayerInventory : MonoBehaviour
                 return false;
 
             fightController.SetAttack(nbAttack, attack);
+            nbCoins -= cost;
             return true;
         }
         return false;
