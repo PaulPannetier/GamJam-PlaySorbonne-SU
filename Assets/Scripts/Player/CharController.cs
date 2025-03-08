@@ -28,6 +28,9 @@ public class CharController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public Vector2 GetCurrentDirection() => new Vector2(playerInput.x, playerInput.y);
+    public Vector2 GetCurrentSpeed() => velocity;
+
     private void CreateInputs()
     {
         if(InputManager.IsGamePadConnected(ControllerType.Gamepad1))
@@ -57,7 +60,6 @@ public class CharController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 current = velocity;
         Vector2 targetVelocity = new Vector2(playerInput.rawX, playerInput.rawY);
         targetVelocity.Normalize();
         targetVelocity.x *= Mathf.Abs(playerInput.x);

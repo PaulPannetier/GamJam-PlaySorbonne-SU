@@ -17,6 +17,8 @@ public class PlayerFightController : MonoBehaviour
         set
         {
             _attack1 = value;
+            if (_attack1 != null)
+                _attack1.fightController = this;
             ResetAttack1Position();
         }
     }
@@ -26,6 +28,8 @@ public class PlayerFightController : MonoBehaviour
         set
         {
             _attack2 = value;
+            if(_attack2 != null)
+                _attack2.fightController = this;
             ResetAttack2Position();
         }
     }
@@ -39,6 +43,8 @@ public class PlayerFightController : MonoBehaviour
 
     private void Start()
     {
+        attack1 = attack1;
+        attack2 = attack2;
         ResetAttack1Position();
         ResetAttack2Position();
     }
