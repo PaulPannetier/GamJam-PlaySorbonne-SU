@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class SceneInit : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
     private Camera mainCamera;
 
     [SerializeField] private GameObject[] prefabScenes;
+    [SerializeField] private GameObject[] prefabScenesFuture;
     [SerializeField] private GameObject playerPrefab;
 
     void Awake()
     {
-        GameObject prefabScene = prefabScenes.GetRandom();
+        int toChoose = Random.Rand(0, prefabScenes.Length);
+        GameObject prefabScene = prefabScenes[toChoose];
+        GameObject prefabSceneFuture = prefabScenesFuture[toChoose];
 
         if (prefabScene == null)
         {
@@ -20,7 +23,7 @@ public class SceneInit : MonoBehaviour
 
         // init les présent (0, 0, 0) et futur (100, 0, 0)
         GameObject presentScene = Instantiate(prefabScene, new Vector3(0f, 0f, 0f), Quaternion.identity);
-        Instantiate(prefabScene, new Vector3(100f, 0f, 0f), Quaternion.identity);
+        Instantiate(prefabSceneFuture, new Vector3(100f, 0f, 0f), Quaternion.identity);
 
         // init bonne taille de caméra
         mainCamera.orthographicSize = 10f;

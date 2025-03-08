@@ -3,15 +3,12 @@ using System.Collections.Generic;
 
 public class PlayerCollection : MonoBehaviour
 {
-
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private float interactRange = 2f;
     [SerializeField] private float collectRadius = 2f;
 
     [SerializeField] private bool drawGizmos;
 
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
