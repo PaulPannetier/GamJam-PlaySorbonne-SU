@@ -1,0 +1,777 @@
+fileFormatVersion: 2
+guid: 5d9e504802e86d541a12d645fb7426f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2709730085501219898
+    second: ElectricBoomrang_0
+  - first:
+      213: 2169934092776056537
+    second: ElectricBoomrang_1
+  - first:
+      213: 7032143747579746083
+    second: ElectricBoomrang_2
+  - first:
+      213: -1842576282868392360
+    second: ElectricBoomrang_3
+  - first:
+      213: 3366818629301161936
+    second: ElectricBoomrang_4
+  - first:
+      213: -7820470553270872835
+    second: ElectricBoomrang_5
+  - first:
+      213: -4410246223505890475
+    second: ElectricBoomrang_6
+  - first:
+      213: 6285813378782974065
+    second: ElectricBoomrang_7
+  - first:
+      213: -9021926622648752480
+    second: ElectricBoomrang_8
+  - first:
+      213: -4572786738591698345
+    second: ElectricBoomrang_9
+  - first:
+      213: 1711975837877181362
+    second: ElectricBoomrang_10
+  - first:
+      213: -4969114684053341579
+    second: ElectricBoomrang_11
+  - first:
+      213: 177263344241410588
+    second: ElectricBoomrang_12
+  - first:
+      213: 4036371558734447252
+    second: ElectricBoomrang_13
+  - first:
+      213: -426267988239691381
+    second: ElectricBoomrang_14
+  - first:
+      213: 3843767456376154330
+    second: ElectricBoomrang_15
+  - first:
+      213: 2637867238226822393
+    second: ElectricBoomrang_16
+  - first:
+      213: -7278587522973096704
+    second: ElectricBoomrang_17
+  - first:
+      213: 3652373412655410147
+    second: ElectricBoomrang_18
+  - first:
+      213: -1052970761074729527
+    second: ElectricBoomrang_19
+  - first:
+      213: 8774553220625421152
+    second: ElectricBoomrang_20
+  - first:
+      213: -6427080170359687067
+    second: ElectricBoomrang_21
+  - first:
+      213: -6569540253125011315
+    second: ElectricBoomrang_22
+  - first:
+      213: 1779346905404299083
+    second: ElectricBoomrang_23
+  - first:
+      213: 1900168922343515761
+    second: ElectricBoomrang_24
+  - first:
+      213: -6636524732496088978
+    second: ElectricBoomrang_25
+  - first:
+      213: -2375334364555826097
+    second: ElectricBoomrang_26
+  - first:
+      213: 6381990237885634307
+    second: ElectricBoomrang_27
+  - first:
+      213: -3332553570819683046
+    second: ElectricBoomrang_28
+  - first:
+      213: 8523101154544014250
+    second: ElectricBoomrang_29
+  - first:
+      213: 1733598084309793241
+    second: ElectricBoomrang_30
+  - first:
+      213: -3788264726367144941
+    second: ElectricBoomrang_31
+  - first:
+      213: -6367314289214787254
+    second: ElectricBoomrang_32
+  - first:
+      213: -2223460400505853367
+    second: ElectricBoomrang_33
+  - first:
+      213: -7105225851308061779
+    second: ElectricBoomrang_34
+  - first:
+      213: -4092634522623004775
+    second: ElectricBoomrang_35
+  - first:
+      213: -8444633095169892768
+    second: ElectricBoomrang_36
+  - first:
+      213: 9210845006577412190
+    second: ElectricBoomrang_37
+  - first:
+      213: 5506994378334579939
+    second: ElectricBoomrang_38
+  - first:
+      213: 2762804737143244805
+    second: ElectricBoomrang_39
+  - first:
+      213: -8523696704791830365
+    second: ElectricBoomrang_40
+  - first:
+      213: 6481560450635510929
+    second: ElectricBoomrang_41
+  - first:
+      213: 1448247224959617903
+    second: ElectricBoomrang_42
+  - first:
+      213: -2187327868807148037
+    second: ElectricBoomrang_43
+  - first:
+      213: -7154672932409306670
+    second: ElectricBoomrang_44
+  - first:
+      213: -3200311119542651976
+    second: ElectricBoomrang_45
+  - first:
+      213: 959867571918691472
+    second: ElectricBoomrang_46
+  - first:
+      213: 1676364992741816149
+    second: ElectricBoomrang_47
+  - first:
+      213: 4501156378234670289
+    second: ElectricBoomrang_48
+  - first:
+      213: 9160170879910042941
+    second: ElectricBoomrang_49
+  - first:
+      213: 6739036292928542695
+    second: ElectricBoomrang_50
+  - first:
+      213: 2702391978901673050
+    second: ElectricBoomrang_51
+  - first:
+      213: 105225031138189506
+    second: ElectricBoomrang_52
+  - first:
+      213: -8408267585924256465
+    second: ElectricBoomrang_53
+  - first:
+      213: 3776182274809886835
+    second: ElectricBoomrang_54
+  - first:
+      213: -7067610681180045368
+    second: ElectricBoomrang_55
+  - first:
+      213: 3518823341308115598
+    second: ElectricBoomrang_56
+  - first:
+      213: -2887804218433294318
+    second: ElectricBoomrang_57
+  - first:
+      213: -2545381628612579636
+    second: ElectricBoomrang_58
+  - first:
+      213: 8229303921186362094
+    second: ElectricBoomrang_59
+  - first:
+      213: 3878771419532894910
+    second: ElectricBoomrang_60
+  - first:
+      213: 6597577958400142158
+    second: ElectricBoomrang_61
+  - first:
+      213: 3997532555320237900
+    second: ElectricBoomrang_62
+  - first:
+      213: 6643155138066996453
+    second: ElectricBoomrang_63
+  - first:
+      213: 6267194373718381488
+    second: ElectricBoomrang_64
+  - first:
+      213: 3075297079815156294
+    second: ElectricBoomrang_65
+  - first:
+      213: -6261058526936217097
+    second: ElectricBoomrang_66
+  - first:
+      213: 1987431589294348368
+    second: ElectricBoomrang_67
+  - first:
+      213: -6031625470961391751
+    second: ElectricBoomrang_68
+  - first:
+      213: 5391381837029222980
+    second: ElectricBoomrang_69
+  - first:
+      213: -7142782611047010034
+    second: ElectricBoomrang_70
+  - first:
+      213: -7331515487737632176
+    second: ElectricBoomrang_71
+  - first:
+      213: 6160716935365590359
+    second: ElectricBoomrang_72
+  - first:
+      213: 1278617963599586248
+    second: ElectricBoomrang_73
+  - first:
+      213: -7517858282458577236
+    second: ElectricBoomrang_74
+  - first:
+      213: 4849994787866028949
+    second: ElectricBoomrang_75
+  - first:
+      213: -9149175256470095810
+    second: ElectricBoomrang_76
+  - first:
+      213: 8965100014826445320
+    second: ElectricBoomrang_77
+  - first:
+      213: -6222441408865696055
+    second: ElectricBoomrang_78
+  - first:
+      213: -3757617857738813849
+    second: ElectricBoomrang_79
+  - first:
+      213: 6434997147343051179
+    second: ElectricBoomrang_80
+  - first:
+      213: -1106049930725467236
+    second: ElectricBoomrang_81
+  - first:
+      213: 3911591986047874096
+    second: ElectricBoomrang_82
+  - first:
+      213: -2951602063088473431
+    second: ElectricBoomrang_83
+  - first:
+      213: -7345121961134015494
+    second: ElectricBoomrang_84
+  - first:
+      213: 5974982452447114838
+    second: ElectricBoomrang_85
+  - first:
+      213: -3883929625954781402
+    second: ElectricBoomrang_86
+  - first:
+      213: 3518660258059299130
+    second: ElectricBoomrang_87
+  - first:
+      213: 3420479528808319720
+    second: ElectricBoomrang_88
+  - first:
+      213: -1710852255272943850
+    second: ElectricBoomrang_89
+  - first:
+      213: -4883109598550067746
+    second: ElectricBoomrang_90
+  - first:
+      213: 6264667252400256155
+    second: ElectricBoomrang_91
+  - first:
+      213: 8174055018314463148
+    second: ElectricBoomrang_92
+  - first:
+      213: -4173050649313592005
+    second: ElectricBoomrang_93
+  - first:
+      213: 5389301546192487064
+    second: ElectricBoomrang_94
+  - first:
+      213: 3089003470258835664
+    second: ElectricBoomrang_95
+  - first:
+      213: 8613946432020405665
+    second: ElectricBoomrang_96
+  - first:
+      213: -2360647167560726351
+    second: ElectricBoomrang_97
+  - first:
+      213: 2593649056777659106
+    second: ElectricBoomrang_98
+  - first:
+      213: -1058530042879160206
+    second: ElectricBoomrang_99
+  - first:
+      213: 7068953356232122658
+    second: ElectricBoomrang_100
+  - first:
+      213: 8888081798793992166
+    second: ElectricBoomrang_101
+  - first:
+      213: 7997055776457252185
+    second: ElectricBoomrang_102
+  - first:
+      213: 8833630535032940269
+    second: ElectricBoomrang_103
+  - first:
+      213: 2540249361068115400
+    second: ElectricBoomrang_104
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ElectricBoomrang_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca275f4633e17045b26c36f326fbd03
+      internalID: 1172064919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c29a3017e4ba194caef879f668ae69d
+      internalID: -1580007472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53fc0755347b3542b0b64fd219e29cd
+      internalID: 1275078695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff2a293a80fb3a468f66580205a8527
+      internalID: 152155533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afe8c71bf574c441a13e7457c3ee24b
+      internalID: 167200029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_5
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 800
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560ce479f649b484bae1dfe60d4255b8
+      internalID: -1861296279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc61b25a8abac140bd3194fa3f9eef4
+      internalID: 918448392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2955067c782b0fb41ab1d14793e99040
+      internalID: -2050169039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_8
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8588cc0e0f013c428785fd445b4d4ec
+      internalID: -732231017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_9
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004f380f226b1204eb4a117b58757813
+      internalID: -335122511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff08fd35e56f244ba602f4ce6998094
+      internalID: 1213079159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 400
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10409e48a6629714bafa2c04bb5e4436
+      internalID: 709315819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e568bc7e8111d47838664f66758638
+      internalID: 880275430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30eb482ab98e4644cafd4e4e7792183e
+      internalID: -1444189865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElectricBoomrang_14
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814b7eaba575ce9439d274ef97e82d26
+      internalID: -1469604692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 58e4d4dc3f9818448b2fcc26b2e63cf7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ElectricBoomrang_0: 1172064919
+      ElectricBoomrang_1: -1580007472
+      ElectricBoomrang_10: 1213079159
+      ElectricBoomrang_11: 709315819
+      ElectricBoomrang_12: 880275430
+      ElectricBoomrang_13: -1444189865
+      ElectricBoomrang_14: -1469604692
+      ElectricBoomrang_2: 1275078695
+      ElectricBoomrang_3: 152155533
+      ElectricBoomrang_4: 167200029
+      ElectricBoomrang_5: -1861296279
+      ElectricBoomrang_6: 918448392
+      ElectricBoomrang_7: -2050169039
+      ElectricBoomrang_8: -732231017
+      ElectricBoomrang_9: -335122511
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
