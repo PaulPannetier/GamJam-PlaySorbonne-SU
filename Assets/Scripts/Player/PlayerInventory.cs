@@ -11,27 +11,28 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private LayerMask collectableMask;
     [SerializeField] private float collectableRadius;
 
-    [field:SerializeField] public int nbCoin {  get; private set; }
+    [SerializeField, ShowOnly] private int nbCoins;
 
     private void Awake()
     {
-        nbCoin = 0;
+        nbCoins = 0;
         items = new List<Item>();
     }
 
     public void CollectCoin(Coin coin)
     {
-        nbCoin++;
+        nbCoins++;
     }
 
     public void AddItem(Item item)
     {
         items.Add(item);
+        item.OnAttach(GetComponent<PlayerFightController>());
     }
 
     public void EarnCoins(int nbCoins)
     {
-        nbCoin += nbCoins;
+        this.nbCoins += nbCoins;
     }
 
     public float GetBonusDamagePercent(PlayerAttack attack, IDamageable enemy)
