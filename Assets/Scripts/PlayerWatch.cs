@@ -8,9 +8,8 @@ public class PlayerWatch : MonoBehaviour
 
     [SerializeField] private Vector2 layout = new Vector2(100, 0);
     [SerializeField] private float moveDuration = 0.5f;
-    [SerializeField] private float rangeDeTestàlarriver;
     [SerializeField] private Boolean isInFuture = false;
-    [SerializeField] private GameObject mainCamera;
+    [SerializeField] public Camera mainCamera;
 
     private bool isOnCooldown = false;
 
