@@ -7,7 +7,7 @@ public abstract class PlayerAttack : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] protected float damage;
 
-    public PlayerFightController fightController;
+    [HideInInspector] public PlayerFightController fightController;
 
     protected virtual void Awake()
     {
@@ -41,9 +41,9 @@ public abstract class PlayerAttack : MonoBehaviour
 
     }
 
-    protected void OnTouchEnemy(EnemyController enemy)
+    protected virtual void OnTouchEnemy(EnemyController enemy)
     {
-        print($"Touch enemy:{enemy.gameObject.name}");
+        enemy.TakeDamage(damage);
     }
 
     protected virtual void Launch()

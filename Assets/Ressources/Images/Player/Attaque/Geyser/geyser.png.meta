@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 958725f3339405f4d8409482005c1969
+guid: 00eb0fda092eba14695312b3d4f3f2d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5682887678673380299
-    second: porterouge_0
-  - first:
-      213: -3396318028966454578
-    second: porterouge_1
-  - first:
-      213: 8806743993325205320
-    second: porterouge_2
-  - first:
-      213: 231959212484979421
-    second: porterouge_3
-  - first:
-      213: -1375409805960174566
-    second: porterouge_4
-  - first:
-      213: -8508910067567886371
-    second: porterouge_5
+      213: -7766822180225196991
+    second: geyser_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,57 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: porterouge_0
+      name: geyser_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 29
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53c9a36f3c35221b0800000000000000
-      internalID: -5682887678673380299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: porterouge_1
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 2
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eca13334fbaddd0d0800000000000000
-      internalID: -3396318028966454578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: porterouge_2
-      rect:
-        serializedVersion: 2
-        x: 63
         y: 0
-        width: 30
-        height: 32
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,74 +115,206 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84734f57007d73a70800000000000000
-      internalID: 8806743993325205320
+      spriteID: 14c5d02a064b63490800000000000000
+      internalID: -7766822180225196991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porterouge_3
+      name: geyser_1
       rect:
         serializedVersion: 2
-        x: 95
+        x: 8
         y: 0
-        width: 30
-        height: 32
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ddaeb8ebca5183300800000000000000
-      internalID: 231959212484979421
+      spriteID: 724fbb0357a74b24eb8b2d4ff3e28c17
+      internalID: -2088521385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porterouge_4
+      name: geyser_2
       rect:
         serializedVersion: 2
-        x: 127
+        x: 16
         y: 0
-        width: 30
-        height: 32
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a14a727911099ece0800000000000000
-      internalID: -1375409805960174566
+      spriteID: 3e4eadd629d9cad44891b6fbb8921c79
+      internalID: 2079449498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porterouge_5
+      name: geyser_3
       rect:
         serializedVersion: 2
-        x: 159
+        x: 24
         y: 0
-        width: 30
-        height: 32
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ddffedc20674ae980800000000000000
-      internalID: -8508910067567886371
+      spriteID: 35c2b77c1699bee47b05f67c5cf6b763
+      internalID: -269811440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cba4007ff05302489c2e24a983b5434
+      internalID: -457587736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67049064d8979d499ca9c0f8f661eb3
+      internalID: 1693100709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9f39cb1a7f42c44bcb3a62e4d4436a
+      internalID: 548777294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75790f2afa74a07418fcace5ff6e0033
+      internalID: 1855612174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e351d84ade5c33847a1052856da43a48
+      internalID: -1695859042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geyser_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e827814f4797a0d4ab1dc6d956a491cf
+      internalID: -1047828219
       vertices: []
       indices: 
       edges: []
@@ -250,7 +323,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ea53ff742b3204442bb5400101e566aa
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +333,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      porterouge_0: -5682887678673380299
-      porterouge_1: -3396318028966454578
-      porterouge_2: 8806743993325205320
-      porterouge_3: 231959212484979421
-      porterouge_4: -1375409805960174566
-      porterouge_5: -8508910067567886371
+      geyser_0: -7766822180225196991
+      geyser_1: -2088521385
+      geyser_2: 2079449498
+      geyser_3: -269811440
+      geyser_4: -457587736
+      geyser_5: 1693100709
+      geyser_6: 548777294
+      geyser_7: 1855612174
+      geyser_8: -1695859042
+      geyser_9: -1047828219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

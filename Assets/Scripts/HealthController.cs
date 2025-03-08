@@ -48,8 +48,14 @@ public class HealthController : MonoBehaviour
         currentLife = current_nb_hearts * 2;
         UpdateUI();
     }
+
     private void UpdateUI()
     {
+        if(heartLayout == null)
+        {
+            return;
+        }
+
         // detruire les enfants dans heartlayout 
         foreach (Transform heart_child in heartLayout){
             Destroy(heart_child.gameObject);
