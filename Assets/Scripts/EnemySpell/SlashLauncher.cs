@@ -11,6 +11,9 @@ public class SlashLauncher : Spell
     [SerializeField] private float slashLifeTime = 0.6f;
     [SerializeField] private float attackRange;
     [SerializeField] private int damage = 1;
+    [SerializeField] private Vector2 offSet;
+
+    [SerializeField] private float detectionRange = 10f;
 
     private GameObject slashObject;
     private Transform target;
@@ -21,17 +24,24 @@ public class SlashLauncher : Spell
     void Start()
     {
         Cast();
+        StartCoroutine(DealDamage());
+        Destroy(gameObject, slashLifeTime);
     }
 
     private void Cast()
     {
         UpdateTarget();
-        if (target == null) return;
 
-        Vector2 dir = (target.position - transform.position).normalized;
-        Vector2 prefabPosition = (Vector2)transform.position + dir * instantiateRange;
 
-        slashObject = Instantiate(slashPrefab, prefabPosition, Quaternion.identity, transform);
+        if (target == null)
+        {
+            return;
+        }
+
+        Vector2 dir = (target.position - transform.position ).normalized;
+        Vector2 prefabPosition = (Vector2)transform.position + new Vector2(dir.x * instantiateRange * offSet.x , dir.y * offSet.y * instantiateRange);
+
+        slashObject = Instantiate(slashPrefab, prefabPosition, Quaternion.identity);
 
         spriteRenderer = slashObject.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -45,7 +55,7 @@ public class SlashLauncher : Spell
 
     void UpdateTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, attackRange, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, detectionRange, Vector2.zero);
 
         List<Transform> playersInRange = new List<Transform>();
         foreach (RaycastHit2D hit in hits)
@@ -86,7 +96,7 @@ public class SlashLauncher : Spell
         {
             yield break;
         }
-        
+
         Vector2 dir = (target.position - transform.position).normalized;
         Vector2 prefabPosition = (Vector2)transform.position + dir * instantiateRange;
 

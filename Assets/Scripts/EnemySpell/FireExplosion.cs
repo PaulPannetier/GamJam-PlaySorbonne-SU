@@ -24,7 +24,7 @@ public class FireExplosion : Spell
 
         UpdateTarget();
         InstantiatePrefab();
-        DealDamage();
+        StartCoroutine(DealDamage());
     }
 
     public override void Cast(EnemyController enemy)
@@ -76,7 +76,6 @@ public class FireExplosion : Spell
 
     void InstantiatePrefab()
     {
-        Debug.Log("lolilol");
         if (target != null)
         {
             GameObject tempGO;

@@ -509,7 +509,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      badmarchand_marche_0: 6485495792290337983
+      badmarchand_marche_1: 2143139447171723281
+      badmarchand_marche_10: -6151006596392136759
+      badmarchand_marche_11: -982482672840999491
+      badmarchand_marche_12: 6007904679902302133
+      badmarchand_marche_13: 1644580351107657903
+      badmarchand_marche_14: -5570590064347053992
+      badmarchand_marche_15: 6291140371578523485
+      badmarchand_marche_2: -2349796938708501956
+      badmarchand_marche_3: 1183223098931125195
+      badmarchand_marche_4: 3191431713818169575
+      badmarchand_marche_5: 7888650883647979315
+      badmarchand_marche_6: 3195113652780428296
+      badmarchand_marche_7: -7559318772659678092
+      badmarchand_marche_8: 4431524005849188394
+      badmarchand_marche_9: 149435634797329188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

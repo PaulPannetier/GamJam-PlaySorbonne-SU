@@ -54,7 +54,7 @@ public class WizardAttackState : IEnemyState
             }
 
             Spell nextSpell = availableSpell.GetRandom();
-            GameObject.Instantiate(nextSpell);
+            GameObject.Instantiate(nextSpell, enemy.transform);
             StartCooldown(nextSpell.cooldown);
         }
 
