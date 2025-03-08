@@ -8,7 +8,7 @@ public class OrcIdleState : IEnemyState
     public void EnterState(EnemyController enemy)
     {
         OrcController orcController = (OrcController)enemy;
-        enemy.TransitionToState(orcController.patrolState);
+        orcController.TransitionToState(orcController.patrolState);
     }
 
     public void UpdateState(EnemyController enemy)
@@ -16,7 +16,7 @@ public class OrcIdleState : IEnemyState
         OrcController orcController = (OrcController)enemy;
         if (CheckPlayerInRange(enemy))
         {
-            enemy.TransitionToState(orcController.patrolState);
+            orcController.TransitionToState(orcController.patrolState);
         }
     }
 

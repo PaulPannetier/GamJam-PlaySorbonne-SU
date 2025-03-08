@@ -8,7 +8,7 @@ public class WizardIdleState : IEnemyState
     public void EnterState(EnemyController enemy)
     {
         WizardController wizardController = (WizardController)enemy;
-        enemy.TransitionToState(wizardController.patrolState);
+        wizardController.TransitionToState(wizardController.patrolState);
     }
 
     public void UpdateState(EnemyController enemy)
@@ -16,7 +16,7 @@ public class WizardIdleState : IEnemyState
         WizardController wizardController = (WizardController)enemy;
         if (CheckPlayerInRange(enemy))
         {
-            enemy.TransitionToState(wizardController.patrolState);
+            wizardController.TransitionToState(wizardController.patrolState);
         }
     }
 

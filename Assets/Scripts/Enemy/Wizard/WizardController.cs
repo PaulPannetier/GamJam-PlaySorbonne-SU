@@ -3,10 +3,10 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class WizardController :  EnemyController
+public class WizardController :  EnemyController , IDamageable
 {
     [Header("State")]    
-    public WizardIdleState idleState ; 
+    public WizardIdleState idleState; 
     public WizardPatrolState patrolState;
     public WizardChaseState chaseState ;
     public WizardAttackState attackState ;
@@ -19,5 +19,31 @@ public class WizardController :  EnemyController
         base.Start();
         
         currentState = idleState;
+    }
+    void Update()
+    {
+        currentState.UpdateState(this);
+        
+    }
+    
+    public void TransitionToState(IEnemyState newState)
+    {
+        currentState.ExitState(this);
+        currentState = newState;
+        currentState.EnterState(this);
+    }
+
+    public void TakeDamage(float amount)
+    { 
+        lastState = currentState;
+        currentLife -= amount; 
+
+        if(currentLife <= 0)
+        {
+            TransitionToState(deathState);
+            return;
+        }
+
+        TransitionToState(hurtState);
     }
 }

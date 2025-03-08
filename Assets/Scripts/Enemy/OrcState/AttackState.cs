@@ -26,7 +26,7 @@ public class OrcAttackState : IEnemyState
         if (availableSpell.Count < 1)
         {
             Debug.Log("pas d'attaque disponible");
-            enemy.TransitionToState(orcController.chaseState);
+            orcController.TransitionToState(orcController.chaseState);
         }
     }
 
@@ -38,7 +38,7 @@ public class OrcAttackState : IEnemyState
             UpdateTarget(enemy);
             if(target == null)
             {
-                enemy.TransitionToState(orcController.chaseState);
+                orcController.TransitionToState(orcController.chaseState);
                 return;
             }
 
@@ -46,7 +46,7 @@ public class OrcAttackState : IEnemyState
             if (availableSpell.Count < 1)
             {
                 Debug.Log("pas d'attaque disponible");
-                enemy.TransitionToState(orcController.chaseState);
+                orcController.TransitionToState(orcController.chaseState);
                 return;
             }
 

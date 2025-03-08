@@ -36,6 +36,7 @@ public class OrcChaseState : IEnemyState
 
     public void EnterState(EnemyController enemy)
     {
+        OrcController orcController = (OrcController)enemy;
         seeker = enemy.seeker;
         rb = enemy.rb;
 
@@ -43,7 +44,7 @@ public class OrcChaseState : IEnemyState
 
         updateTargetCoroutine = enemy.StartCoroutine(UpdateTargetRoutine(enemy));
         updatePathCoroutine = enemy.StartCoroutine(UpdatePathRoutine(enemy));
-        enemy.Callback(CanStopChase, minChaseDuration);
+        orcController.Callback(CanStopChase, minChaseDuration);
 
     }
 
@@ -73,7 +74,7 @@ public class OrcChaseState : IEnemyState
             target = UpdateTarget(enemy);
             if (target == null)
             {
-                enemy.TransitionToState(orcController.patrolState);
+                orcController.TransitionToState(orcController.patrolState);
                 return;
             }
         }
@@ -88,7 +89,7 @@ public class OrcChaseState : IEnemyState
 
         if (playerDistance > chaseDistance && canStopChase)
         {
-            enemy.TransitionToState(orcController.patrolState);
+            orcController.TransitionToState(orcController.patrolState);
         }
 
         // Si le joueur est en dehors de la portée d'attaque = on le poursuit
@@ -125,7 +126,7 @@ public class OrcChaseState : IEnemyState
 
         if (playerDistance < attackRange)
         {
-            enemy.TransitionToState(orcController.attackState);
+            orcController.TransitionToState(orcController.attackState);
         }
 
 

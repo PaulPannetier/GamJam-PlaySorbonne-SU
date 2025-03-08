@@ -43,7 +43,7 @@ public class WizardPatrolState : IEnemyState
         //poursuit le joueur si possible 
         if (target != null)
         {
-            enemy.TransitionToState(wizardController.chaseState);
+            wizardController.TransitionToState(wizardController.chaseState);
         }
 
         //update la position 

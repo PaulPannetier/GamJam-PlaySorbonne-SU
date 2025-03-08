@@ -1,7 +1,7 @@
 using UnityEngine;
 using Collision2D;
 
-public class GeyserAttack : PlayerAttack
+public class GeyserAttack : PowerUpAttack
 {
     private SpriteRenderer spriteRenderer;
 
@@ -28,6 +28,7 @@ public class GeyserAttack : PlayerAttack
 
         float angle = 0f;
         Vector2 center = fightController.transform.position;
+        int nbGeyser = this.nbGeyser + GetPowerUp();
         for (int i = 0; i < nbGeyser; i++)
         {
             Vector2 offset = Useful.Vector2FromAngle(angle, radius);
@@ -37,7 +38,7 @@ public class GeyserAttack : PlayerAttack
         }
     }
 
-    public void OnGeyserTouch(Geyser geyser, EnemyController enemy)
+    public void OnGeyserTouch(Geyser geyser, IDamageable enemy)
     {
         base.OnTouchEnemy(enemy);
     }

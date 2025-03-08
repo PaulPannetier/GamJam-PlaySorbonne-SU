@@ -27,7 +27,7 @@ public class Slash : Spell
         Vector2 prefabPosition = (Vector2)enemy.transform.position + dir * instantiateRange;
 
         slashObject = Instantiate(slashPrefab, prefabPosition, Quaternion.identity, enemy.transform);
-        enemy.Callback(DealDamage, dmgTimer);
+        //enemy.Callback(DealDamage, dmgTimer);
 
         spriteRenderer = slashObject.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
