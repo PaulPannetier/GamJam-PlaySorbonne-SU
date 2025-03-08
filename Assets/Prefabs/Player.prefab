@@ -237,10 +237,26 @@ MonoBehaviour:
     keyGamepad3: 
     keyGamepad4: 
     controllerType: 6
+  inputAttack3:
+    keysKeyboard: 
+    keyGamepad1: 
+    keyGamepad2: 
+    keyGamepad3: 
+    keyGamepad4: 
+    controllerType: 0
+  inputAttack4:
+    keysKeyboard: 
+    keyGamepad1: 
+    keyGamepad2: 
+    keyGamepad3: 
+    keyGamepad4: 
+    controllerType: 0
   attack1Offset: {x: 0.37, y: -0.3}
   attack2Offset: {x: -0.39, y: -0.3}
   _attack1: {fileID: 0}
   _attack2: {fileID: 0}
+  _attack3: {fileID: 0}
+  _attack4: {fileID: 0}
   drawGizmos: 0
 --- !u!114 &6185889625714989777
 MonoBehaviour:
@@ -291,7 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa65e330307a39d4593824de9d3950a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layout: {x: 100, y: 0}
   moveDuration: 0.5
   isInFuture: 0
   activateKey: 116
@@ -307,3 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5dba4e160f7184cbbbb8059941910e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
+  collectableMask:
+    serializedVersion: 2
+    m_Bits: 256
+  collectableRadius: 4
+  <nbCoin>k__BackingField: 13

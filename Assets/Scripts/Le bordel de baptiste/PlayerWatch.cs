@@ -8,6 +8,7 @@ public class PlayerWatch : MonoBehaviour
     [SerializeField] private float moveDuration = 0.5f;
     [SerializeField] private bool isInFuture = false;
     [SerializeField] private InputKey activateKey;
+    [SerializeField] private LayerMask groundLayerMask;
 
     private bool isOnCooldown = false;
 
@@ -24,7 +25,7 @@ public class PlayerWatch : MonoBehaviour
                 AvoidTeleportation();
             }
         }
-        
+
     }
 
     private bool TestToTP()
@@ -33,11 +34,13 @@ public class PlayerWatch : MonoBehaviour
         Collider2D hit;
         if (isInFuture)
         {
-            hit = Physics2D.OverlapCircle(transform.position - (Vector3)layout, checkRadius);
-        } else
-        {
-            hit = Physics2D.OverlapCircle(transform.position + (Vector3)layout, checkRadius);
+            hit = Physics2D.OverlapCircle(new Vector2(transform.position.x - layout.x , transform.position.y - layout.y), checkRadius, groundLayerMask);
         }
+        else
+        {
+            hit = Physics2D.OverlapCircle(new Vector2(transform.position.x + layout.x , transform.position.y + layout.y), checkRadius, groundLayerMask);
+        }
+        Debug.Log(hit == null);
         return hit == null;
     }
 
@@ -47,14 +50,14 @@ public class PlayerWatch : MonoBehaviour
         {
             return;
         }
+
         if (isInFuture)
         {
-            transform.position -= (Vector3)layout;
-            StartCoroutine(MoveCamera(false));
-        } else
+            gameObject.transform.position = new Vector2(transform.position.x - layout.x, transform.position.y - layout.y);
+        }
+        else
         {
-            transform.position += (Vector3)layout;
-            StartCoroutine(MoveCamera(true));
+            gameObject.transform.position = new Vector2(transform.position.x + layout.x, transform.position.y + layout.y);
         }
         isInFuture = !isInFuture;
     }
@@ -68,39 +71,39 @@ public class PlayerWatch : MonoBehaviour
     {
         OnPressT();
     }
-
-    private IEnumerator MoveCamera(Boolean toTheFuture)
-    {
-        if (isOnCooldown)
-            yield break;
-
-        isOnCooldown = true;
-        Vector3 startPos = Camera.main.transform.position;
-        Vector3 targetPos = startPos;
-        if (toTheFuture)
+    /*
+        private IEnumerator MoveCamera(Boolean toTheFuture)
         {
-            targetPos += (Vector3)layout;
-        } else
-        {
-            targetPos -= (Vector3)layout;
-        }
-            
-        float elapsedTime = 0f;
+            if (isOnCooldown)
+                yield break;
 
-        while (elapsedTime < moveDuration)
-        {
-            float t = elapsedTime / moveDuration;
-            t = Mathf.SmoothStep(0f, 1f, t);
-            Camera.main.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            isOnCooldown = true;
+            Vector3 startPos = Camera.main.transform.position;
+            Vector3 targetPos = startPos;
+            if (toTheFuture)
+            {
+                targetPos += (Vector3)layout;
+            } else
+            {
+                targetPos -= (Vector3)layout;
+            }
 
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+            float elapsedTime = 0f;
 
-        Camera.main.transform.position = targetPos;
+            while (elapsedTime < moveDuration)
+            {
+                float t = elapsedTime / moveDuration;
+                t = Mathf.SmoothStep(0f, 1f, t);
+                Camera.main.transform.position = Vector3.Lerp(startPos, targetPos, t);
 
-        yield return new WaitForSeconds(moveDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
 
-        isOnCooldown = false;
-    }
+            Camera.main.transform.position = targetPos;
+
+            yield return new WaitForSeconds(moveDuration);
+
+            isOnCooldown = false;
+        }*/
 }
