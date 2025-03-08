@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      badmarchand_attack_0: 6330389684064371711
+      badmarchand_attack_1: -3287456256543031578
+      badmarchand_attack_2: 5576338080632137316
+      badmarchand_attack_3: -3553027596600773644
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
