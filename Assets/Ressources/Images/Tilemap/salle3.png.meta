@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8761210b360c2452e8ae97997fc893f6
+guid: 1419c38b6e69c62468121eb6d0be5465
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7599144700654984453
-    second: toppng.com-heart-half-svg-png-icon-free-download-half-and-half-heart-981x862_0
+      213: -7208272498873917842
+    second: salle3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toppng.com-heart-half-svg-png-icon-free-download-half-and-half-heart-981x862_0
+      name: salle3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 835
-        height: 734
+        width: 112
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50d155fd7d5957960800000000000000
-      internalID: 7599144700654984453
+      spriteID: e6e17647a5217fb90800000000000000
+      internalID: -7208272498873917842
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      toppng.com-heart-half-svg-png-icon-free-download-half-and-half-heart-981x862_0: 7599144700654984453
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

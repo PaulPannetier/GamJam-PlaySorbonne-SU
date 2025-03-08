@@ -33,13 +33,17 @@ public class PlayerWatch : MonoBehaviour
 
     private bool TestToTP()
     {
-        /*
-        Transform resulPosition = transform.position + layout; // ca marhce pas car 2d/3d mais je te laisse faire 
-
-        // tester par un raycast qu'il y a un sol et pas d'enemy à l'arriver 
-        return // si t'as le droit ou pas 
-        */
-        return true;
+        float checkRadius = 0.5f;
+        Collider2D hit;
+        if (isInFuture)
+        {
+            hit = Physics2D.OverlapCircle(transform.position - (Vector3)layout, checkRadius);
+        } else
+        {
+            hit = Physics2D.OverlapCircle(transform.position + (Vector3)layout, checkRadius);
+        }
+        Debug.Log(hit == null);
+        return hit == null;
     }
 
     private void ActivateTeleportation()
@@ -73,7 +77,7 @@ public class PlayerWatch : MonoBehaviour
     private IEnumerator MoveCamera(Boolean toTheFuture)
     {
         if (isOnCooldown)
-            yield break; // Exit if still on cooldown
+            yield break;
 
         isOnCooldown = true;
         Vector3 startPos = mainCamera.transform.position;
@@ -90,18 +94,18 @@ public class PlayerWatch : MonoBehaviour
 
         while (elapsedTime < moveDuration)
         {
-            float t = elapsedTime / moveDuration; // Normalize time (0 to 1)
-            t = Mathf.SmoothStep(0, 1, t); // Apply ease in - ease out
+            float t = elapsedTime / moveDuration;
+            t = Mathf.SmoothStep(0, 1, t);
             mainCamera.transform.position = Vector3.Lerp(startPos, targetPos, t);
 
             elapsedTime += Time.deltaTime;
-            yield return null; // Wait for next frame
+            yield return null;
 
         }
 
         mainCamera.transform.position = targetPos;
 
-        yield return new WaitForSeconds(moveDuration); // Wait for cooldown
+        yield return new WaitForSeconds(moveDuration);
 
         isOnCooldown = false;
     }
