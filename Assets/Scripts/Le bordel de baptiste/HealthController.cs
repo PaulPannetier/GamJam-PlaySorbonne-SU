@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class HealthController : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class HealthController : MonoBehaviour
 
     [SerializeField] private int current_nb_hearts;
     [SerializeField] private int currentLife; 
+
     //[SerializeField] private int shield;
+    [SerializeField] private Transform gameOverPanel;
     [SerializeField] private bool isDead; 
 
     private Animator animator;
@@ -30,6 +33,7 @@ public class HealthController : MonoBehaviour
             currentLife = 0;
             isDead = true;
             animator.SetBool("isDead", true);
+            SetUpGameOver();
         }
 
         UpdateUI();
@@ -51,6 +55,7 @@ public class HealthController : MonoBehaviour
         currentLife = current_nb_hearts * 2;
         UpdateUI();
         animator = GetComponent<Animator>();
+        gameOverPanel.gameObject.SetActive(false);
     }
 
     private void UpdateUI()
@@ -95,5 +100,10 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    
+    void SetUpGameOver()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.gameObject.SetActive(true);
+
+    }
 }
