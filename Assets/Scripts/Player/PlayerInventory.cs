@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private LayerMask collectableMask;
     [SerializeField] private float collectableRadius;
 
-    public int nbCoin {  get; private set; }
+    [field:SerializeField] public int nbCoin {  get; private set; }
 
     private void Awake()
     {

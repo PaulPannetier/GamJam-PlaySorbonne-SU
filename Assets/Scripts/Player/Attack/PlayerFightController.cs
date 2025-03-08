@@ -10,8 +10,9 @@ public class PlayerFightController : MonoBehaviour
     [SerializeField] private InputManager.GeneralInput inputAttack2;
     [SerializeField] private Vector2 attack1Offset, attack2Offset;
 
-    [SerializeField] private PlayerAttack _attack1, _attack2;
-    public PlayerAttack attack1
+
+    [SerializeField] private PlayerAttack _attack1, _attack2, _attack3, _attack4;
+    private PlayerAttack attack1
     {
         get => _attack1;
         set
@@ -22,7 +23,7 @@ public class PlayerFightController : MonoBehaviour
             ResetAttack1Position();
         }
     }
-    public PlayerAttack attack2
+    private PlayerAttack attack2
     {
         get => _attack2;
         set
@@ -30,6 +31,28 @@ public class PlayerFightController : MonoBehaviour
             _attack2 = value;
             if(_attack2 != null)
                 _attack2.fightController = this;
+            ResetAttack2Position();
+        }
+    }
+    private PlayerAttack attack3
+    {
+        get => _attack3;
+        set
+        {
+            _attack3 = value;
+            if (_attack3 != null)
+                _attack3.fightController = this;
+            ResetAttack1Position();
+        }
+    }
+    private PlayerAttack attack4
+    {
+        get => _attack4;
+        set
+        {
+            _attack4 = value;
+            if (_attack4 != null)
+                _attack4.fightController = this;
             ResetAttack2Position();
         }
     }
@@ -47,6 +70,24 @@ public class PlayerFightController : MonoBehaviour
         attack2 = attack2;
         ResetAttack1Position();
         ResetAttack2Position();
+    }
+
+    public int GetNbAttack()
+    {
+        if (attack4 != null)
+            return 4;
+        if (attack3 != null) 
+            return 3;
+        if (attack2 != null)
+            return 2;
+        if (attack1 != null)
+            return 1;
+        return 0;
+    }
+
+    public void SetAttack(int index,  PlayerAttack attack)
+    {
+
     }
 
     private void ResetAttack1Position()
