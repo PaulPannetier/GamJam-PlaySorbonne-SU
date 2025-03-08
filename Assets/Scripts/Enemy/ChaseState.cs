@@ -115,6 +115,11 @@ public class ChaseState : IEnemyState
             {
                 currWp++;
             }
+
+            if (direction.x > 1e-3)
+            {
+                enemy.spriteRenderer.flipX = direction.x < 0;
+            }
         }
 
         if (playerDistance < attackRange)

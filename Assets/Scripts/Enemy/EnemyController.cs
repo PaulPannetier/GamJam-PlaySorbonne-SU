@@ -27,8 +27,8 @@ public class EnemyController : MonoBehaviour, IDamageable
     [HideInInspector]public Seeker seeker;
     [HideInInspector]public Rigidbody2D rb;
     [HideInInspector]public Animator animator;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    public Vector2 startPosition;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,8 +37,9 @@ public class EnemyController : MonoBehaviour, IDamageable
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         currentState = idleState;
-        startPosition = transform.position;
 
         currentLife = maxLife;
     }
