@@ -1,23 +1,20 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerWatch : MonoBehaviour
 {
-
     [SerializeField] private Vector2 layout = new Vector2(100, 0);
     [SerializeField] private float moveDuration = 0.5f;
-    [SerializeField] private Boolean isInFuture = false;
-    [SerializeField] public Camera mainCamera;
+    [SerializeField] private bool isInFuture = false;
+    [SerializeField] private InputKey activateKey;
 
     private bool isOnCooldown = false;
 
     void OnPressT()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (InputManager.GetKeyDown(activateKey))
         {
-            Debug.Log("T key was pressed!");
             if (TestToTP())
             {
                 ActivateTeleportation();
@@ -79,7 +76,7 @@ public class PlayerWatch : MonoBehaviour
             yield break;
 
         isOnCooldown = true;
-        Vector3 startPos = mainCamera.transform.position;
+        Vector3 startPos = Camera.main.transform.position;
         Vector3 targetPos = startPos;
         if (toTheFuture)
         {
@@ -94,15 +91,14 @@ public class PlayerWatch : MonoBehaviour
         while (elapsedTime < moveDuration)
         {
             float t = elapsedTime / moveDuration;
-            t = Mathf.SmoothStep(0, 1, t);
-            mainCamera.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            t = Mathf.SmoothStep(0f, 1f, t);
+            Camera.main.transform.position = Vector3.Lerp(startPos, targetPos, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
-
         }
 
-        mainCamera.transform.position = targetPos;
+        Camera.main.transform.position = targetPos;
 
         yield return new WaitForSeconds(moveDuration);
 

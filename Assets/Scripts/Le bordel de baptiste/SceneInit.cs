@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class SceneInit : MonoBehaviour
 {
+    private Camera mainCamera;
+
     [SerializeField] private GameObject prefabScene;
-    [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject playerPrefab;
 
     void Awake()
@@ -13,10 +14,11 @@ public class SceneInit : MonoBehaviour
             Debug.LogError("Prefab not found in Resources folder!");
             return;
         }
+        mainCamera = Camera.main;
 
         // init les présent (0, 0, 0) et futur (100, 0, 0)
-        GameObject presentScene = Instantiate(prefabScene, new Vector3(0, 0, 0), Quaternion.identity);
-        Instantiate(prefabScene, new Vector3(100, 0, 0), Quaternion.identity);
+        GameObject presentScene = Instantiate(prefabScene, new Vector3(0f, 0f, 0f), Quaternion.identity);
+        Instantiate(prefabScene, new Vector3(100f, 0f, 0f), Quaternion.identity);
 
         // init bonne taille de caméra
         mainCamera.orthographicSize = 10f;
@@ -27,14 +29,10 @@ public class SceneInit : MonoBehaviour
         if (scriptInstance != null)
         {
             GameObject[] spawnPoints = scriptInstance.spawnPoints;
-            GameObject randomSpawn = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+            GameObject randomSpawn = spawnPoints.GetRandom();
 
             GameObject player = Instantiate(playerPrefab, randomSpawn.transform.position, Quaternion.identity);
             PlayerWatch scriptInstance2 = player.GetComponent<PlayerWatch>();
-            if (scriptInstance2 != null)
-            {
-                scriptInstance2.mainCamera = mainCamera;
-            }
         }
     }
 }
