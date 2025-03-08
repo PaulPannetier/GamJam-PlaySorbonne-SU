@@ -3,7 +3,7 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class EnemyController : MonoBehaviour, IDamageable
+public class EnemyController : MonoBehaviour
 {
     [Header("State")]
     public IEnemyState currentState;
@@ -15,8 +15,8 @@ public class EnemyController : MonoBehaviour, IDamageable
     */
 
     [Header("LifeSystem")]
-    [SerializeField] private float maxLife = 10f;
-    [SerializeField] private float currentLife;
+    [SerializeField] public float maxLife = 10f;
+    [SerializeField] public float currentLife;
 
 
     [Header("Component")]
@@ -40,37 +40,24 @@ public class EnemyController : MonoBehaviour, IDamageable
         currentLife = maxLife;
     }
 
-    void Update()
-    {
-        currentState.UpdateState(this);
-        
-    }
-
     
-    public void TransitionToState(IEnemyState newState)
+    public void BasicTransitionToState(IEnemyState newState)
     {
         currentState.ExitState(this);
         currentState = newState;
         currentState.EnterState(this);
     }
 
+    public void TakeDamage(float amout)
+    {
+
+    }
+
+    
     public IEnumerator Callback(Action callback,float coolDown)
     {
         yield return new WaitForSeconds(coolDown);
         callback();
     }
 
-    public void TakeDamage(float amount)
-    { 
-        lastState = currentState;
-        currentLife -= amount; 
-
-        if(currentLife <= 0)
-        {
-            TransitionToState(deathState);
-            return;
-        }
-
-        TransitionToState(hurtState);
-    }
 }

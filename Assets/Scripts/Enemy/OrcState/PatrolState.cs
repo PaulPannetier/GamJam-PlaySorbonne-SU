@@ -42,7 +42,7 @@ public class OrcPatrolState : IEnemyState
         //poursuit le joueur si possible 
         if (target != null)
         {
-            enemy.TransitionToState(orcController.chaseState);
+            orcController.TransitionToState(orcController.chaseState);
         }
 
         //update la position 

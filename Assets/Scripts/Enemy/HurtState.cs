@@ -20,7 +20,7 @@ public class HurtState : IEnemyState
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            enemy.TransitionToState(enemy.lastState);
+            enemy.BasicTransitionToState(enemy.lastState);
         }
     }
 

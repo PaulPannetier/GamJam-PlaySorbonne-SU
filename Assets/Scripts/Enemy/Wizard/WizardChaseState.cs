@@ -2,7 +2,6 @@ using UnityEngine;
 using Pathfinding;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEditorInternal;
 
 [System.Serializable]
 public class WizardChaseState : IEnemyState
@@ -41,10 +40,9 @@ public class WizardChaseState : IEnemyState
         rb = enemy.rb;
 
         canStopChase = false;
-
-        updateTargetCoroutine = enemy.StartCoroutine(UpdateTargetRoutine(enemy));
-        updatePathCoroutine = enemy.StartCoroutine(UpdatePathRoutine(enemy));
-        enemy.Callback(CanStopChase, minChaseDuration);
+        updateTargetCoroutine = wizardController.StartCoroutine(UpdateTargetRoutine(enemy));
+        updatePathCoroutine = wizardController.StartCoroutine(UpdatePathRoutine(enemy));
+        wizardController.Callback(CanStopChase, minChaseDuration);
 
     }
 
@@ -74,7 +72,7 @@ public class WizardChaseState : IEnemyState
             target = UpdateTarget(enemy);
             if (target == null)
             {
-                enemy.TransitionToState(wizardController.patrolState);
+                wizardController.TransitionToState(wizardController.patrolState);
                 return;
             }
         }
@@ -89,11 +87,11 @@ public class WizardChaseState : IEnemyState
 
         if (playerDistance > chaseDistance && canStopChase)
         {
-            enemy.TransitionToState(wizardController.patrolState);
+            wizardController.TransitionToState(wizardController.patrolState);
         }
 
         // Si le joueur est en dehors de la portée d'attaque = on le poursuit
-        if (playerDistance > attackRange)
+        if (playerDistance > attackRange || !canStopChase)
         {
             // Calcule la direction vers le prochain waypoint
             Vector2 direction = ((Vector2)path.vectorPath[currWp] - rb.position).normalized;
@@ -124,12 +122,10 @@ public class WizardChaseState : IEnemyState
             }
         }
 
-        if (playerDistance < attackRange)
+        if (playerDistance < attackRange && canStopChase)
         {
-            enemy.TransitionToState(wizardController.attackState);
+            wizardController.TransitionToState(wizardController.attackState);
         }
-
-
     }
 
 
@@ -144,6 +140,7 @@ public class WizardChaseState : IEnemyState
 
     Transform UpdateTarget(EnemyController enemy)
     {
+
         RaycastHit2D[] hits = Physics2D.CircleCastAll(enemy.transform.position, maxDetectionDistance, Vector2.zero);
 
         List<Transform> playersInRange = new List<Transform>();
@@ -154,8 +151,28 @@ public class WizardChaseState : IEnemyState
                 playersInRange.Add(hit.transform);
             }
         }
+        target = GetClosestPlayer(enemy.transform.position, playersInRange);
 
-        return GetClosestPlayer(enemy.transform.position, playersInRange);
+
+        float playerDistance = Vector2.Distance(target.transform.position, enemy.transform.position);
+
+        if (playerDistance > attackRange)
+        {
+            return target;
+        }
+        else
+        {
+            // Générer une nouvelle position pour s’éloigner du joueur
+            Vector2 directionAway = (enemy.transform.position - target.transform.position).normalized;
+            Vector2 newPosition = (Vector2)enemy.transform.position + directionAway * 5f; // S’éloigne de `attackRange`
+
+            // Créer un objet temporaire pour représenter cette nouvelle position
+            GameObject tempTarget = new GameObject("TempTarget");
+            tempTarget.transform.position = newPosition;
+
+            Debug.Log(tempTarget);
+            return tempTarget.transform;
+        }
     }
 
     public Transform GetClosestPlayer(Vector2 currentPosition, List<Transform> playersInRange)
@@ -182,7 +199,7 @@ public class WizardChaseState : IEnemyState
     void UpdatePath()
     {
         // Vérifie si le Seeker est prêt à calculer un nouveau chemin
-        if (seeker.IsDone())
+        if (seeker.IsDone() && target !=null)
             // Demande un nouveau chemin du Seeker entre la position actuelle et la cible
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }

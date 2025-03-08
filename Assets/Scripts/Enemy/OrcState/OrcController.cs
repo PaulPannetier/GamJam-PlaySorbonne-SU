@@ -1,6 +1,9 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class OrcController : EnemyController
+public class OrcController : EnemyController, IDamageable
 {
     [Header("OrcState")]
     public OrcIdleState idleState ; 
@@ -15,9 +18,30 @@ public class OrcController : EnemyController
         currentState = idleState;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        currentState.UpdateState(this);
+    }
+    
+    public void TransitionToState(IEnemyState newState)
+    {
+        currentState.ExitState(this);
+        currentState = newState;
+        currentState.EnterState(this);
+    }
+
+
+    public void TakeDamage(float amount)
+    { 
+        lastState = currentState;
+        currentLife -= amount; 
+
+        if(currentLife <= 0)
+        {
+            TransitionToState(deathState);
+            return;
+        }
+
+        TransitionToState(hurtState);
     }
 }
