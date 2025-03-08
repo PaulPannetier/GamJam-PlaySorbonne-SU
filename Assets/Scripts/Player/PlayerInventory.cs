@@ -6,6 +6,7 @@ using System;
 
 public class PlayerInventory : MonoBehaviour
 {
+    private PlayerFightController fightController;
     [SerializeField] private List<Item> items;
 
     [SerializeField] private LayerMask collectableMask;
@@ -17,6 +18,7 @@ public class PlayerInventory : MonoBehaviour
     {
         nbCoins = 0;
         items = new List<Item>();
+        fightController = GetComponent<PlayerFightController>();
     }
 
     public void CollectCoin(Coin coin)
@@ -63,6 +65,30 @@ public class PlayerInventory : MonoBehaviour
             powerUp += item.GetPowerUp(attack);
         }
         return powerUp;
+    }
+
+    public bool TryBuy(Item item)
+    {
+        if(nbCoins >= item.value)
+        {
+            AddItem(item);
+            return true;
+        }
+        return false;
+    }
+
+    public bool TryBuy(PlayerAttack attack, int cost)
+    {
+        if (nbCoins >= cost)
+        {
+            int nbAttack = fightController.GetNbAttack();
+            if(nbAttack >= 4)
+                return false;
+
+            fightController.SetAttack(nbAttack, attack);
+            return true;
+        }
+        return false;
     }
 
     private void Update()
