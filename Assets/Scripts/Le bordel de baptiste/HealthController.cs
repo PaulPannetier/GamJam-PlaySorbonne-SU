@@ -44,7 +44,7 @@ public class HealthController : MonoBehaviour
 
     private void Start()
     {
-        current_nb_hearts = 6;
+        current_nb_hearts = 3;
         currentLife = current_nb_hearts * 2;
         UpdateUI();
     }

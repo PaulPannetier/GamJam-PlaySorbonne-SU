@@ -1,5 +1,10 @@
 using UnityEngine;
 
+public enum Side : byte
+{
+    up, down, left, right
+}
+
 public class PlayerAnimator : MonoBehaviour
 {
     private CharController characterController;
@@ -11,6 +16,10 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private string runDownAnimationName;
     [SerializeField] private string idleAnimationName;
 
+    [HideInInspector] public bool enableBehaviour;
+
+    public Side currentSide {  get; private set; }
+
     private void Awake()
     {
         characterController = GetComponent<CharController>();
@@ -19,10 +28,15 @@ public class PlayerAnimator : MonoBehaviour
         runUpAnim = Animator.StringToHash(runUpAnimationName);
         runDownAnim = Animator.StringToHash(runDownAnimationName);
         idleAnim = Animator.StringToHash(idleAnimationName);
+        enableBehaviour = true;
+        currentSide = Side.right;
     }
 
     private void Update()
     {
+        if (!enableBehaviour)
+            return;
+
         Vector2 speed = characterController.GetCurrentSpeed();
         if(speed.magnitude < 1e-3f)
         {
@@ -33,10 +47,12 @@ public class PlayerAnimator : MonoBehaviour
         if(Mathf.Abs(speed.x) >= Mathf.Abs(speed.y * 0.95f))
         {
             animator.CrossFade(runAnim, 0f, 0);
+            currentSide = speed.x > 0f ? Side.right : Side.left;
         }
         else
         {
             int anim = speed.y > 0f ? runUpAnim : runDownAnim;
+            currentSide = speed.y > 0f ? Side.up : Side.down;
             animator.CrossFade(anim, 0f, 0);
         }
     }
