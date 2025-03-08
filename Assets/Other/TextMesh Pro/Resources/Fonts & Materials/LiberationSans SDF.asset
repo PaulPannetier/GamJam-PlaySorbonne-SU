@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - OUTLINE_ON
   - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 1
@@ -63,9 +64,9 @@ Material:
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 0.9254902, g: 0, b: 0.71612877, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0.10765473, g: 0, b: 0.6886792, a: 1}
+    - _FaceColor: {r: 0.9254902, g: 0.0068231723, b: 0, a: 1}
+    - _OutlineColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+    - _UnderlayColor: {r: 0.4056604, g: 0.009567461, b: 0.045482196, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &11400000
