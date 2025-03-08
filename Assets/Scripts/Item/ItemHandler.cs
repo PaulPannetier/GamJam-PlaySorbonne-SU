@@ -1,4 +1,6 @@
 using UnityEngine;
+using Collision2D;
+using Collider2D = UnityEngine.Collider2D;
 
 public class ItemHandler : MonoBehaviour, ICollectable
 {
@@ -40,5 +42,10 @@ public class ItemHandler : MonoBehaviour, ICollectable
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Circle.GizmosDraw(transform.position, collectDistance, Color.yellow);
     }
 }
