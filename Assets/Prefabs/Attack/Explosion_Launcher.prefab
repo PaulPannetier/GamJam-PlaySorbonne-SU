@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: 
-  cooldown: 0.1
+  cooldown: 4
   explosionPrefab: {fileID: 9172156147743952182, guid: 56652b430eee7e14184cf9f8506aabb8, type: 3}
   timeBeforeExplosion: 0.4
   timeBeforeDestroy: 1.74
