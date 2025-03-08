@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ae719c06e05f41ebb38d188a466d2fb
+guid: 5dd9dc86d14d34a4989264c99eb4890e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vibing_clock_0: -3638821146579148618
+      vibing_clock_1: 4353190374812476184
+      vibing_clock_10: -7685600038196114838
+      vibing_clock_11: -5076583947540430591
+      vibing_clock_12: -6495942815127170224
+      vibing_clock_13: 2814317297785208645
+      vibing_clock_14: -3435960801708742444
+      vibing_clock_15: 7317103330472708779
+      vibing_clock_16: -3895240828494057148
+      vibing_clock_17: 1370659496022916836
+      vibing_clock_18: -528105607806329081
+      vibing_clock_19: -8889130605225925507
+      vibing_clock_2: 4955930943439281438
+      vibing_clock_3: -1332586366117193387
+      vibing_clock_4: -3679677521922074228
+      vibing_clock_5: 2301444711804484956
+      vibing_clock_6: 3591251047245308119
+      vibing_clock_7: 6842237542627349870
+      vibing_clock_8: -7748578115555926651
+      vibing_clock_9: 7381069070108964689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

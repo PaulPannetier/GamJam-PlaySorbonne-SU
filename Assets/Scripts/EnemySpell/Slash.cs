@@ -20,7 +20,7 @@ public class Slash : Spell
 
     public override void Cast(EnemyController enemy)
     {
-        target = GetTarget(enemy);
+        UpdateTarget(enemy);
         if (target == null) return;
 
         Vector2 dir = (target.position - enemy.transform.position).normalized;
@@ -44,11 +44,6 @@ public class Slash : Spell
         return true;
     }
 
-    Transform GetTarget(EnemyController enemy)
-    {
-        return enemy.attackState.target;
-    }
-
     void DealDamage()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(slashObject.transform.position, damageRange, (target.position - slashObject.transform.position).normalized);
@@ -68,5 +63,42 @@ public class Slash : Spell
                 damageable.TakeDamage(damage);
             }
         }
+    }
+
+    void UpdateTarget(EnemyController enemy)
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(enemy.transform.position, damageRange, Vector2.zero);
+
+        List<Transform> playersInRange = new List<Transform>();
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.transform.CompareTag("Player"))
+            {
+                playersInRange.Add(hit.transform);
+            }
+        }
+
+        target = GetClosestPlayer(enemy.transform.position, playersInRange);
+    }
+
+    public Transform GetClosestPlayer(Vector2 currentPosition, List<Transform> playersInRange)
+    {
+        if (playersInRange == null || playersInRange.Count == 0)
+            return null; // Aucun joueur dans la liste
+
+        Transform closestPlayer = null;
+        float closestDistanceSqr = float.MaxValue; // Distance la plus courte trouvée
+
+        foreach (Transform player in playersInRange)
+        {
+            float distanceSqr = (player.position - (Vector3)currentPosition).sqrMagnitude; // Distance au carré
+            if (distanceSqr < closestDistanceSqr)
+            {
+                closestDistanceSqr = distanceSqr;
+                closestPlayer = player;
+            }
+        }
+
+        return closestPlayer;
     }
 }

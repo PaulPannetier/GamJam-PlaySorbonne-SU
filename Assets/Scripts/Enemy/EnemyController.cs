@@ -7,10 +7,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 {
     [Header("State")]
     public IEnemyState currentState;
-    public IdleState idleState ; 
-    public PatrolState patrolState;
-    public ChaseState chaseState ;
-    public AttackState attackState ;
+    public IEnemyState lastState;
     public HurtState hurtState;
     public DeathState deathState;
     /*
@@ -32,14 +29,13 @@ public class EnemyController : MonoBehaviour, IDamageable
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        currentState = idleState;
 
         currentLife = maxLife;
     }
@@ -66,12 +62,15 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount)
     { 
+        lastState = currentState;
         currentLife -= amount; 
 
         if(currentLife <= 0)
         {
             TransitionToState(deathState);
-            
+            return;
         }
+
+        TransitionToState(hurtState);
     }
 }

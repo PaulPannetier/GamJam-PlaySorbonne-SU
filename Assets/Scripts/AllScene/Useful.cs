@@ -2788,7 +2788,7 @@ public static class Useful
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void RemoveFromDontDestroyOnLoad(this GameObject obj)
     {
-        SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
+        UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(obj, UnityEngine.SceneManagement.SceneManager.GetActiveScene());
     }
 
     public static void GizmoDrawVector(in Vector2 origin, in Vector2 dir) => GizmoDrawVector(origin, dir, 1f, 0.39269908169f, Gizmos.DrawLine); // 0.39269908169f = 22.5° = pi/8 rad

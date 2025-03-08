@@ -12,7 +12,7 @@ public class HurtState : IEnemyState
     {
         timer = hurtDuration;
         isHurt = true;
-        enemy.animator.SetBool("IsHurt", isHurt);
+        enemy.animator.SetBool("isHurt", isHurt);
     }
     
     public void UpdateState(EnemyController enemy)
@@ -20,14 +20,14 @@ public class HurtState : IEnemyState
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            enemy.TransitionToState(enemy.chaseState);
+            enemy.TransitionToState(enemy.lastState);
         }
     }
 
     public void ExitState(EnemyController enemy)
     {
         isHurt = false;
-        enemy.animator.SetBool("IsHurt", isHurt);
+        enemy.animator.SetBool("isHurt", isHurt);
     }
 
 }

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6185889625714989777}
   - component: {fileID: 181497419751235113}
   - component: {fileID: 3974980100156979397}
+  - component: {fileID: 6183685608511123194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -277,6 +278,7 @@ MonoBehaviour:
   runUpAnimationName: runUp
   runDownAnimationName: runDown
   idleAnimationName: idle
+  enableBehaviour: 0
 --- !u!114 &3974980100156979397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,3 +295,15 @@ MonoBehaviour:
   moveDuration: 0.5
   isInFuture: 0
   activateKey: 116
+--- !u!114 &6183685608511123194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972280976306540443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5dba4e160f7184cbbbb8059941910e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
