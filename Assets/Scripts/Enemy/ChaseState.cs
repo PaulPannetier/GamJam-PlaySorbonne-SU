@@ -73,6 +73,7 @@ public class ChaseState : IEnemyState
             if (target == null)
             {
                 enemy.TransitionToState(enemy.patrolState);
+                return;
             }
         }
 

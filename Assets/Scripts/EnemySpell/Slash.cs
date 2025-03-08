@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[CreateAssetMenu(fileName = "Spell", menuName = "Spell/Slash")]
 public class Slash : Spell
 {
     [SerializeField] private GameObject slashPrefab;
