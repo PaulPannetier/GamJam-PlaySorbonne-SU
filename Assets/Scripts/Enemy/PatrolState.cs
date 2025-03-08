@@ -56,6 +56,11 @@ public class PatrolState : IEnemyState
         Vector2 smoothDirection = Vector2.Lerp(rb.linearVelocity.normalized, direction, 0.1f);
         Vector2 velocity = smoothDirection * speed * Time.fixedDeltaTime;
         rb.linearVelocity = velocity;
+        
+        if (direction.x > 1e-3)
+        {
+            enemy.spriteRenderer.flipX = direction.x < 0;
+        }
 
         enemy.animator.SetFloat("Speed", velocity.sqrMagnitude);
 
@@ -142,7 +147,7 @@ public class PatrolState : IEnemyState
         // Vérifie si le Seeker est prêt à calculer un nouveau chemin
         if (seeker.IsDone())
         {
-            Vector2 targetPosition = (Vector2)enemy.transform.position + Random.PointInCircle(enemy.startPosition, randDistance.y);
+            Vector2 targetPosition = (Vector2)enemy.transform.position + Random.PointInCircle(enemy.transform.position, randDistance.y);
             // Demande un nouveau chemin du Seeker entre la position actuelle et la cible
             seeker.StartPath(rb.position, targetPosition, OnPathComplete);
         }
