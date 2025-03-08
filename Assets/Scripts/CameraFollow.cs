@@ -12,8 +12,8 @@ public class CameraFollow : MonoBehaviour
             Debug.LogWarning("Aucune cible assignée à la caméra !");
             return;
         }
-
         Vector3 desiredPosition = target.position + offSet;
+        desiredPosition.z = transform.position.z;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
     }
