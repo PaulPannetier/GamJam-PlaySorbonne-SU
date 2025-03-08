@@ -1,16 +1,20 @@
 using UnityEngine;
-
 public class CameraFollow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 offSet;
+    [SerializeField] private float smoothSpeed = 5f;
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        if (target == null)
+        {
+            Debug.LogWarning("Aucune cible assignée à la caméra !");
+            return;
+        }
+
+        Vector3 desiredPosition = target.position + offSet;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        transform.position = smoothedPosition;
     }
 }
