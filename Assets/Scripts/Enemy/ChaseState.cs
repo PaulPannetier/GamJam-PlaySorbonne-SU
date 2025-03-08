@@ -73,6 +73,7 @@ public class ChaseState : IEnemyState
             if (target == null)
             {
                 enemy.TransitionToState(enemy.patrolState);
+                return;
             }
         }
 
@@ -113,6 +114,11 @@ public class ChaseState : IEnemyState
             if (distance < nextWpDistance)
             {
                 currWp++;
+            }
+
+            if (direction.x > 1e-3)
+            {
+                enemy.spriteRenderer.flipX = direction.x < 0;
             }
         }
 

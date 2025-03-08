@@ -1,18 +1,15 @@
 using UnityEngine;
-using Collision2D;
 
 public class CharController : MonoBehaviour
 {
-    private new Transform transform;
     private Inputs playerInput;
     private Rigidbody2D rb;
-
+    private SpriteRenderer spriteRenderer;
     private Vector2 velocity;
 
     [SerializeField] private bool drawGizmos;
 
     [Header("Walk")]
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float walkSpeed;
     [SerializeField, Range(0f, 1f)] private float initSpeed;
     [SerializeField] private float speedLerp;
@@ -23,11 +20,15 @@ public class CharController : MonoBehaviour
     [SerializeField] private InputKey right;
     [SerializeField] private InputKey left;
 
+    public bool flipX {  get; private set; }
+
     private void Awake()
     {
-        this.transform = base.transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
+
+    public Vector2 GetCurrentDirection() => new Vector2(playerInput.x, playerInput.y);
 
     private void CreateInputs()
     {
@@ -52,6 +53,8 @@ public class CharController : MonoBehaviour
     private void Update()
     {
         CreateInputs();
+
+        spriteRenderer.flipX = flipX;
     }
 
     private void FixedUpdate()
@@ -91,11 +94,15 @@ public class CharController : MonoBehaviour
         }
 
         rb.linearVelocity = velocity;
+
+        if(Mathf.Abs(velocity.x) > 1e-4f)
+        {
+            flipX = velocity.x < 0f;
+        }
     }
 
     private void OnValidate()
     {
-        this.transform = base.transform;
         walkSpeed = Mathf.Max(0f, walkSpeed);
     }
 

@@ -5,17 +5,22 @@ using Collider2D = UnityEngine.Collider2D;
 public class Bullet : MonoBehaviour
 {
     private Vector2 dir;
-    private float damage;
+    private GunAttack gunAttack;
 
     [SerializeField] private Vector2 collisionOffset;
     [SerializeField] private float collisionRadius;
     [SerializeField] private float speed;
-    [SerializeField] private LayerMask enemyMask; 
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float maxLifeDuration = 10f;
 
-    public void Launch(in Vector2 dir, float damage)
+    [SerializeField] private bool drawGizmos;
+
+    public void Launch(in Vector2 dir, GunAttack gunAttack)
     {
         this.dir = dir;
-        this.damage = damage;
+        transform.rotation = Quaternion.Euler(0f, 0f, Useful.AngleHori(Vector2.zero, dir) * Mathf.Rad2Deg);
+        this.gunAttack = gunAttack;
+        this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }
 
     private void Update()
@@ -26,7 +31,7 @@ public class Bullet : MonoBehaviour
             EnemyController enemyController = col.GetComponent<EnemyController>();
             if (enemyController != null)
             {
-                enemyController.TakeDamage(damage);
+                gunAttack.OnBulletTouch(this, enemyController);
             }
         }
 
@@ -35,6 +40,9 @@ public class Bullet : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if (!drawGizmos)
+            return;
+
         Circle.GizmosDraw((Vector2)transform.position + collisionOffset, collisionRadius, Color.red);
     }
 

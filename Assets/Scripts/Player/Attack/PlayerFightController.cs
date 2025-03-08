@@ -3,6 +3,9 @@ using Collision2D;
 
 public class PlayerFightController : MonoBehaviour
 {
+    private bool flipX, oldFlipX;
+    private CharController characterController;
+
     [SerializeField] private InputManager.GeneralInput inputAttack1;
     [SerializeField] private InputManager.GeneralInput inputAttack2;
     [SerializeField] private Vector2 attack1Offset, attack2Offset;
@@ -14,6 +17,8 @@ public class PlayerFightController : MonoBehaviour
         set
         {
             _attack1 = value;
+            if (_attack1 != null)
+                _attack1.fightController = this;
             ResetAttack1Position();
         }
     }
@@ -23,14 +28,23 @@ public class PlayerFightController : MonoBehaviour
         set
         {
             _attack2 = value;
+            if(_attack2 != null)
+                _attack2.fightController = this;
             ResetAttack2Position();
         }
     }
 
     public bool drawGizmos;
 
+    private void Awake()
+    {
+        characterController = GetComponent<CharController>();
+    }
+
     private void Start()
     {
+        attack1 = attack1;
+        attack2 = attack2;
         ResetAttack1Position();
         ResetAttack2Position();
     }
@@ -39,7 +53,7 @@ public class PlayerFightController : MonoBehaviour
     {
         if (attack1 != null)
         {
-            attack1.SetPosition((Vector2)transform.position + attack1Offset);
+            attack1.SetPosition((Vector2)transform.position + attack1Offset, flipX);
         }
     }
 
@@ -47,7 +61,7 @@ public class PlayerFightController : MonoBehaviour
     {
         if (attack2 != null)
         {
-            attack2.SetPosition((Vector2)transform.position + attack2Offset);
+            attack2.SetPosition((Vector2)transform.position + attack2Offset, flipX);
         }
     }
 
@@ -62,6 +76,19 @@ public class PlayerFightController : MonoBehaviour
         {
             attack2?.TryLaunch();
         }
+
+        flipX = characterController.flipX;
+
+        if (flipX != oldFlipX)
+        {
+            Vector2 tmp = attack1Offset;
+            attack1Offset = attack2Offset;
+            attack2Offset = tmp;
+
+            ResetAttack1Position();
+            ResetAttack2Position();
+        }
+        oldFlipX = flipX;
     }
 
     private void OnDrawGizmosSelected()
