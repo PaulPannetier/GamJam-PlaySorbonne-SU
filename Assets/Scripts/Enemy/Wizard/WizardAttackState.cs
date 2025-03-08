@@ -19,10 +19,11 @@ public class WizardAttackState : IEnemyState
 
     public void EnterState(EnemyController enemy)
     {
+            Debug.Log("target");
         WizardController wizardController = (WizardController)enemy;
         wizardController.animator.SetBool("isAttack", true);
         UpdateAvailableSpell(wizardController);
-
+        canAttack = true;
         if (availableSpell.Count < 1)
         {
             Debug.Log("pas d'attaque disponible");
@@ -33,9 +34,11 @@ public class WizardAttackState : IEnemyState
     public void UpdateState(EnemyController enemy)
     {
         WizardController wizardController = (WizardController)enemy;
+
         if (canAttack)
         {
             UpdateTarget(wizardController);
+
             if(target == null)
             {
                 wizardController.TransitionToState(wizardController.chaseState);
@@ -51,7 +54,7 @@ public class WizardAttackState : IEnemyState
             }
 
             Spell nextSpell = availableSpell.GetRandom();
-            nextSpell.Cast(wizardController);
+            GameObject.Instantiate(nextSpell);
             StartCooldown(nextSpell.cooldown);
         }
 

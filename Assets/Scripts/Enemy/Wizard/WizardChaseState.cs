@@ -33,6 +33,8 @@ public class WizardChaseState : IEnemyState
     private Coroutine updateTargetCoroutine;
     private Coroutine updatePathCoroutine;
 
+    [SerializeField] private float stopChaseTimer;
+
     public void EnterState(EnemyController enemy)
     {
         WizardController wizardController = (WizardController)enemy;
@@ -42,8 +44,8 @@ public class WizardChaseState : IEnemyState
         canStopChase = false;
         updateTargetCoroutine = wizardController.StartCoroutine(UpdateTargetRoutine(enemy));
         updatePathCoroutine = wizardController.StartCoroutine(UpdatePathRoutine(enemy));
-        wizardController.Callback(CanStopChase, minChaseDuration);
-
+        
+        stopChaseTimer = minChaseDuration;
     }
 
     private IEnumerator UpdateTargetRoutine(EnemyController enemy)
@@ -85,9 +87,10 @@ public class WizardChaseState : IEnemyState
         // Calcule la distance entre l'ennemi et le joueur
         float playerDistance = Vector2.Distance(target.transform.position, enemy.transform.position);
 
-        if (playerDistance > chaseDistance && canStopChase)
+        if (playerDistance > chaseDistance)
         {
             wizardController.TransitionToState(wizardController.patrolState);
+            return;
         }
 
         // Si le joueur est en dehors de la portée d'attaque = on le poursuit
@@ -125,6 +128,13 @@ public class WizardChaseState : IEnemyState
         if (playerDistance < attackRange && canStopChase)
         {
             wizardController.TransitionToState(wizardController.attackState);
+            return;
+        }
+
+        stopChaseTimer -= Time.deltaTime;
+        if(stopChaseTimer <= 0)
+        {
+            canStopChase = true;
         }
     }
 
@@ -169,8 +179,7 @@ public class WizardChaseState : IEnemyState
             // Créer un objet temporaire pour représenter cette nouvelle position
             GameObject tempTarget = new GameObject("TempTarget");
             tempTarget.transform.position = newPosition;
-
-            Debug.Log(tempTarget);
+            GameObject.Destroy(tempTarget,0.1f);
             return tempTarget.transform;
         }
     }

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireExplosion : Spell
+public class SlashLauncher : Spell
 {
-    [SerializeField] private GameObject explosionPrefab;
-    [SerializeField] private float timeBeforeExplosion = 0.2f;
-    [SerializeField] private float timeBeforeDestroy = 2f;
-    [SerializeField] private float timeBeforeDamage = 0.2f;
-    [SerializeField] private float attackRange = 10f;
-    [SerializeField] private float explosionRange = 3f;
+    [SerializeField] private GameObject slashPrefab;
+    [SerializeField] private float instantiateRange = 1f;
+    [SerializeField] private float timeBeforeDamage = 0.3f;
+
+    [SerializeField] private float slashLifeTime = 0.6f;
+    [SerializeField] private float attackRange;
     [SerializeField] private int damage = 1;
 
+    private GameObject slashObject;
     private Transform target;
+    private float dmgTimer;
+
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -21,21 +25,23 @@ public class FireExplosion : Spell
 
     private void Cast()
     {
-
         UpdateTarget();
-        InstantiatePrefab();
-        DealDamage();
+        if (target == null) return;
+
+        Vector2 dir = (target.position - transform.position).normalized;
+        Vector2 prefabPosition = (Vector2)transform.position + dir * instantiateRange;
+
+        slashObject = Instantiate(slashPrefab, prefabPosition, Quaternion.identity, transform);
+
+        spriteRenderer = slashObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = dir.x < 0;
+        }
+
+        Destroy(slashObject, slashLifeTime);
     }
 
-    public override void Cast(EnemyController enemy)
-    {
-        //plus utile mais interface 
-    }
-
-    public override bool Condition(EnemyController enemy)
-    {
-        return true;
-    }
 
     void UpdateTarget()
     {
@@ -49,7 +55,6 @@ public class FireExplosion : Spell
                 playersInRange.Add(hit.transform);
             }
         }
-
         target = GetClosestPlayer(transform.position, playersInRange);
     }
 
@@ -70,41 +75,9 @@ public class FireExplosion : Spell
                 closestPlayer = player;
             }
         }
-
         return closestPlayer;
     }
 
-    void InstantiatePrefab()
-    {
-        Debug.Log("lolilol");
-        if (target != null)
-        {
-            GameObject tempGO;
-            tempGO = Instantiate(explosionPrefab, target.position, target.rotation);
-            Destroy(tempGO, timeBeforeDestroy);
-        }
-        Destroy(gameObject, timeBeforeDestroy);
-    }
-
-    #region old
-    void UpdateTarget(EnemyController enemy)
-    {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(enemy.transform.position, attackRange, Vector2.zero);
-
-        List<Transform> playersInRange = new List<Transform>();
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.transform.CompareTag("Player"))
-            {
-                playersInRange.Add(hit.transform);
-            }
-        }
-
-        target = GetClosestPlayer(enemy.transform.position, playersInRange);
-    }
-
-
-    #endregion
     IEnumerator DealDamage()
     {
         yield return new WaitForSeconds(timeBeforeDamage);
@@ -113,8 +86,11 @@ public class FireExplosion : Spell
         {
             yield break;
         }
+        
+        Vector2 dir = (target.position - transform.position).normalized;
+        Vector2 prefabPosition = (Vector2)transform.position + dir * instantiateRange;
 
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(target.position, explosionRange, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(prefabPosition, attackRange, Vector2.zero);
         foreach (RaycastHit2D hit in hits)
         {
             HealthController healthController = hit.transform.GetComponent<HealthController>();
@@ -126,4 +102,20 @@ public class FireExplosion : Spell
             }
         }
     }
+
+
+
+
+
+    public override void Cast(EnemyController enemy)
+    {
+
+    }
+
+    public override bool Condition(EnemyController enemy)
+    {
+        return true;
+    }
+
+
 }

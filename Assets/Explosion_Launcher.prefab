@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: 
-  cooldown: 4
+  cooldown: 0.1
   explosionPrefab: {fileID: 9172156147743952182, guid: 56652b430eee7e14184cf9f8506aabb8, type: 3}
-  timeBeforeExplosion: 0.2
-  timeBeforeDestroy: 2
+  timeBeforeExplosion: 0.4
+  timeBeforeDestroy: 1.74
   timeBeforeDamage: 0.2
-  attackRange: 10
-  explosionRange: 3
+  attackRange: 15
+  explosionRange: 2
+  damage: 1
