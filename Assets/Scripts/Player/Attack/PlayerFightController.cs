@@ -85,9 +85,25 @@ public class PlayerFightController : MonoBehaviour
         return 0;
     }
 
-    public void SetAttack(int index,  PlayerAttack attack)
+    public void SetAttack(int index, PlayerAttack attack)
     {
-
+        switch (index)
+        {
+            case 0:
+                attack1 = attack;
+                break;
+            case 1:
+                attack2 = attack;
+                break;
+            case 2:
+                attack3 = attack;
+                break;
+            case 3:
+                attack4 = attack;
+                break;
+            default:
+                break;
+        }
     }
 
     private void ResetAttack1Position()
