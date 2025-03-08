@@ -8,6 +8,8 @@ public class PlayerFightController : MonoBehaviour
 
     [SerializeField] private InputManager.GeneralInput inputAttack1;
     [SerializeField] private InputManager.GeneralInput inputAttack2;
+    [SerializeField] private InputManager.GeneralInput inputAttack3;
+    [SerializeField] private InputManager.GeneralInput inputAttack4;
     [SerializeField] private Vector2 attack1Offset, attack2Offset;
 
 
@@ -132,6 +134,16 @@ public class PlayerFightController : MonoBehaviour
         if (inputAttack2.IsPressedDown())
         {
             attack2?.TryLaunch();
+        }
+
+        if (inputAttack3.IsPressedDown())
+        {
+            attack3?.TryLaunch();
+        }
+
+        if (inputAttack4.IsPressedDown())
+        {
+            attack4?.TryLaunch();
         }
 
         flipX = characterController.flipX;
