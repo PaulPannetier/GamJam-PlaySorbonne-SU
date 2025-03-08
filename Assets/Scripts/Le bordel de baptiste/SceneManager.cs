@@ -10,7 +10,7 @@ public class SceneManager : MonoBehaviour
 
     void Awake()
     {
-        int toChoose = Random.Range(0, prefabScenes.Length);
+        int toChoose = Random.Rand(0, prefabScenes.Length);
         GameObject prefabScene = prefabScenes[toChoose];
         GameObject prefabSceneFuture = prefabScenesFuture[toChoose];
 

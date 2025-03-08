@@ -1,17 +1,16 @@
 using UnityEngine;
 
 public class Coin : MonoBehaviour, ICollectable
-{   
-    [SerializeField] private float collectSpeed = 2f;
-    [SerializeField] private float collectDistance = 0.4f;
+{
     private bool isCollected = false;
     private Transform target;
+    private Collider2D col;
+    private Rigidbody2D rb;
 
-    Collider2D col;
-    Rigidbody2D rb;
-
+    [SerializeField] private float collectSpeed = 2f;
+    [SerializeField] private float collectDistance = 0.4f;
     
-    void Start()
+    void Awake()
     {
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -19,12 +18,15 @@ public class Coin : MonoBehaviour, ICollectable
 
     public void Collect(Transform target)
     {
-        if(isCollected)
-        return;
-
         isCollected = true;
         col.enabled = false;
         this.target = target;
+        target.GetComponent<PlayerInventory>().CollectCoin(this);
+    }
+
+    public bool CanBeCollect(Transform target)
+    {
+        return !isCollected && transform.position.SqrDistance(transform.position) < collectDistance * collectDistance;
     }
 
     void FixedUpdate()
