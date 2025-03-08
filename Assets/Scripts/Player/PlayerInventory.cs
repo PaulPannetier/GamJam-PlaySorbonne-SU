@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private List<Item> items;
 
     [SerializeField] private LayerMask collectableMask;
+    [SerializeField] private LayerMask interactableMask;
     [SerializeField] private float collectableRadius;
 
     [SerializeField] private int nbCoins;
@@ -107,6 +108,18 @@ public class PlayerInventory : MonoBehaviour
                 if (collectable.CanBeCollect(transform))
                 {
                     collectable.Collect(transform);
+                }
+            }
+        }
+
+        if(InputManager.GetKeyDown(KeyCode.E))
+        {
+            cols = Physics2D.OverlapCircleAll(transform.position, collectableRadius, interactableMask);
+            foreach (Collider2D col in cols)
+            {
+                if (col.TryGetComponent<IInteractable>(out IInteractable interactable))
+                {
+                    interactable.Activate();
                 }
             }
         }
