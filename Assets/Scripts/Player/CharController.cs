@@ -29,6 +29,7 @@ public class CharController : MonoBehaviour
     }
 
     public Vector2 GetCurrentDirection() => new Vector2(playerInput.x, playerInput.y);
+    public Vector2 GetCurrentSpeed() => velocity;
 
     private void CreateInputs()
     {
@@ -59,7 +60,6 @@ public class CharController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 current = velocity;
         Vector2 targetVelocity = new Vector2(playerInput.rawX, playerInput.rawY);
         targetVelocity.Normalize();
         targetVelocity.x *= Mathf.Abs(playerInput.x);

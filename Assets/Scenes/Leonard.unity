@@ -188,7 +188,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1806317536}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 972280976306540443, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 794190823}
   m_SourcePrefab: {fileID: 100100000, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
 --- !u!4 &132349582 stripped
 Transform:
@@ -658,6 +661,27 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 9123912760989040376, guid: 4223d0c0e3dfc8e43b7501429dac6154, type: 3}
   m_PrefabInstance: {fileID: 633772099}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &794190815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 972280976306540443, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+  m_PrefabInstance: {fileID: 132349575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &794190823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794190815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61edd36b1ae4f474fb93327be310f373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAnimationName: run
+  runUpAnimationName: runUp
+  runDownAnimationName: runDown
+  idleAnimationName: idle
 --- !u!4 &1401795676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 585873691806459248, guid: 319b63ba5453b454bb164020744ad8a8, type: 3}
