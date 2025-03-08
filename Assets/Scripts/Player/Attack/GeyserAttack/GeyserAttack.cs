@@ -19,7 +19,8 @@ public class GeyserAttack : PowerUpAttack
     {
         base.SetPosition(position, reversed);
         transform.position = position;
-        spriteRenderer.flipX = reversed;
+        if(spriteRenderer != null)
+            spriteRenderer.flipX = reversed;
     }
 
     protected override void Launch()

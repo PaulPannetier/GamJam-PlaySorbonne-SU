@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 105049267051790401}
   - component: {fileID: 2067332388661539472}
   - component: {fileID: 1884556606215445170}
+  - component: {fileID: 939930050854892935}
+  - component: {fileID: 374470504560855599}
   m_Layer: 8
   m_Name: ChestsBlack
   m_TagString: Untagged
@@ -124,4 +126,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootForce: 5
-  loots: []
+  loots:
+  - {fileID: 7337780087342723856, guid: 5f695245707076f43867fe360162ab57, type: 3}
+  - {fileID: 6834345753971704653, guid: c02a68f41c919c947a1bcd7cfe0f7a86, type: 3}
+  - {fileID: 7337780087342723856, guid: 5f695245707076f43867fe360162ab57, type: 3}
+  - {fileID: 7337780087342723856, guid: 5f695245707076f43867fe360162ab57, type: 3}
+  - {fileID: 7337780087342723856, guid: 5f695245707076f43867fe360162ab57, type: 3}
+--- !u!50 &939930050854892935
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769646251682276865}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &374470504560855599
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769646251682276865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.52, y: -0.36}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 2}
+    newSize: {x: 3, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.61, y: 1.2}
+  m_EdgeRadius: 0
