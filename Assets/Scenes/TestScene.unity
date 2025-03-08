@@ -310,11 +310,11 @@ Transform:
   m_GameObject: {fileID: 259781467}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1921463, y: 0.8458721, z: -9.392337}
+  m_LocalPosition: {x: -0.1921463, y: 1.1658721, z: -9.392337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1384383980}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &259781471
 MonoBehaviour:
@@ -7437,11 +7437,6 @@ MonoBehaviour:
   interactRange: 2
   collectRadius: 2
   drawGizmos: 0
---- !u!4 &1384383980 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
-  m_PrefabInstance: {fileID: 1637270521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1424775282
 GameObject:
   m_ObjectHideFlags: 0
@@ -7610,7 +7605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7648,12 +7643,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3974980100156979397, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+      propertyPath: activateKey
+      value: 116
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 259781470}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 972280976306540443, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
       insertIndex: -1
@@ -7734,10 +7730,10 @@ GameObject:
   - component: {fileID: 1793414746}
   - component: {fileID: 1793414745}
   - component: {fileID: 1793414744}
-  - component: {fileID: 1793414749}
   - component: {fileID: 1793414750}
+  - component: {fileID: 1793414751}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Orc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7904,54 +7900,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1793414749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793414743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35514a0e0d0d2ab41a0e94b71f6f0796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleState:
-    activationRange: 20
-  patrolState:
-    ChasePlayerRange: 10
-    speed: 55
-    nextWpDistance: 0.5
-    timeRand: {x: 4, y: 8}
-    randDistance: 1
-    spawnpoints:
-    - {fileID: 1647335630}
-    - {fileID: 1442735905}
-    - {fileID: 1848284091}
-    - {fileID: 1692214153}
-  chaseState:
-    maxDetectionDistance: 20
-    chaseDistance: 10
-    minChaseDuration: 1
-    target: {fileID: 0}
-    speed: 120
-    nextWpDistance: 1
-    attackRange: 2
-    attackStateCooldown: 0.2
-  attackState:
-    spells:
-    - {fileID: 5039638371343774783, guid: 06b066c2cc8c19147bef30a9189d1db8, type: 3}
-    attackRange: 2
-    target: {fileID: 0}
-  hurtState:
-    hurtDuration: 0.5
-    isHurt: 0
-  maxLife: 10
-  currentLife: 0
-  seeker: {fileID: 0}
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
 --- !u!95 &1793414750
 Animator:
   serializedVersion: 7
@@ -7974,6 +7922,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1793414751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793414743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694891eb488d24f4d98d9d4e872eca0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtState:
+    hurtDuration: 0.5
+    isHurt: 0
+  maxLife: 10
+  currentLife: 0
+  seeker: {fileID: 0}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  idleState:
+    activationRange: 20
+  patrolState:
+    ChasePlayerRange: 10
+    speed: 120
+    nextWpDistance: 1
+    timeRand: {x: 2, y: 6}
+    randDistance: 2
+    spawnpoints: []
+  chaseState:
+    maxDetectionDistance: 20
+    chaseDistance: 10
+    minChaseDuration: 1
+    target: {fileID: 0}
+    speed: 120
+    nextWpDistance: 1
+    attackRange: 2
+    attackStateCooldown: 0.2
+  attackState:
+    spells: []
+    attackRange: 2
+    target: {fileID: 6087841652626591330, guid: ccd6181cd8a3c77408072335208a9be8, type: 3}
 --- !u!1 &1827143065
 GameObject:
   m_ObjectHideFlags: 0
@@ -11078,6 +11069,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f695245707076f43867fe360162ab57, type: 3}
+--- !u!1001 &8261329421891068825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400674474816700492, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852624948133907540, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
+      propertyPath: m_Name
+      value: Wizard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 260f7cdc2890c8a498819e5c06797a2f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11089,6 +11137,8 @@ SceneRoots:
   - {fileID: 1442735905}
   - {fileID: 1848284091}
   - {fileID: 1692214153}
+  - {fileID: 259781470}
   - {fileID: 1637270521}
   - {fileID: 5963012432750502953}
   - {fileID: 154587539}
+  - {fileID: 8261329421891068825}
