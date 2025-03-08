@@ -8,7 +8,7 @@ public class DeathState : IEnemyState
     public void EnterState(EnemyController enemy)
     {
         isDead = true;
-        enemy.animator.SetBool("IsDead", isDead);
+        enemy.animator.SetBool("isDead", isDead);
         GameObject.Destroy(enemy.gameObject, timeBeforeDestroy);
     }
 
@@ -20,6 +20,6 @@ public class DeathState : IEnemyState
     public void ExitState(EnemyController enemy)
     {
         isDead = false;
-        enemy.animator.SetBool("IsDead", isDead);
+        enemy.animator.SetBool("isDead", isDead);
     }
 }

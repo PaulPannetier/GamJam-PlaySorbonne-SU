@@ -47,12 +47,6 @@ public class EnemyController : MonoBehaviour
         currentState = newState;
         currentState.EnterState(this);
     }
-
-    public void TakeDamage(float amout)
-    {
-
-    }
-
     
     public IEnumerator Callback(Action callback,float coolDown)
     {
