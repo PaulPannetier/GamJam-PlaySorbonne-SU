@@ -291,7 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa65e330307a39d4593824de9d3950a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layout: {x: 100, y: 0}
   moveDuration: 0.5
   isInFuture: 0
   activateKey: 116
@@ -307,3 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5dba4e160f7184cbbbb8059941910e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
+  collectableMask:
+    serializedVersion: 2
+    m_Bits: 256
+  collectableRadius: 4
