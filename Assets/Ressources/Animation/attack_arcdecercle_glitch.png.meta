@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 90702e3943f4d5d4c8f7ecaf05d720a3
+guid: c63ea4d6c82b01e45af07914c62283be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2729769330830350393
-    second: gentilmarchant_idle_0
+      213: -3925531067213807864
+    second: attack_arcdecercle_glitch_0
   - first:
-      213: -7808782214215897349
-    second: gentilmarchant_idle_1
+      213: -3053311038849245201
+    second: attack_arcdecercle_glitch_1
   - first:
-      213: -562134683298894947
-    second: gentilmarchant_idle_2
+      213: -6684312666892881635
+    second: attack_arcdecercle_glitch_2
   - first:
-      213: -2168070200299778384
-    second: gentilmarchant_idle_3
-  - first:
-      213: 1746659863333155059
-    second: gentilmarchant_idle_4
-  - first:
-      213: -7173738417022723389
-    second: gentilmarchant_idle_5
+      213: 7903130899969459204
+    second: attack_arcdecercle_glitch_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +109,79 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gentilmarchant_idle_0
+      name: attack_arcdecercle_glitch_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 20
+        y: 29
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ff5ffea46b589c0800000000000000
+      internalID: -3925531067213807864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_arcdecercle_glitch_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 14
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef9c9c89c570a5d0800000000000000
+      internalID: -3053311038849245201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_arcdecercle_glitch_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 9
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11b4326b0d8c33a0800000000000000
+      internalID: -6684312666892881635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_arcdecercle_glitch_3
+      rect:
+        serializedVersion: 2
+        x: 112
         y: 8
-        width: 18
-        height: 18
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,118 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93816e25eb612e520800000000000000
-      internalID: 2729769330830350393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gentilmarchant_idle_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 8
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfee549e2f1a1a390800000000000000
-      internalID: -7808782214215897349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gentilmarchant_idle_2
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9bea0edb75e238f0800000000000000
-      internalID: -562134683298894947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gentilmarchant_idle_3
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0be8507c3a779e1e0800000000000000
-      internalID: -2168070200299778384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gentilmarchant_idle_4
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f0b76934e16d3810800000000000000
-      internalID: 1746659863333155059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gentilmarchant_idle_5
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ca99c5fae2c17c90800000000000000
-      internalID: -7173738417022723389
+      spriteID: 404c7125eaf8dad60800000000000000
+      internalID: 7903130899969459204
       vertices: []
       indices: 
       edges: []

@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 {
     private Vector2 dir;
     private GunAttack gunAttack;
-    private List<EnemyController> enemyAlreadyTouch;
+    private List<IDamageable> enemyAlreadyTouch;
 
     [SerializeField] private Vector2 collisionOffset;
     [SerializeField] private float collisionRadius;
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         this.dir = dir;
         transform.rotation = Quaternion.Euler(0f, 0f, Useful.AngleHori(Vector2.zero, dir) * Mathf.Rad2Deg);
         this.gunAttack = gunAttack;
-        enemyAlreadyTouch = new List<EnemyController>();
+        enemyAlreadyTouch = new List<IDamageable>();
         this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }
 
@@ -31,11 +31,11 @@ public class Bullet : MonoBehaviour
         Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position + collisionOffset, collisionRadius, enemyMask);
         foreach (Collider2D col in cols)
         {
-            EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
+            IDamageable enemy = col.GetComponent<IDamageable>();
+            if (enemy != null && !enemyAlreadyTouch.Contains(enemy))
             {
-                gunAttack.OnBulletTouch(this, enemyController);
-                enemyAlreadyTouch.Add(enemyController);
+                gunAttack.OnBulletTouch(this, enemy);
+                enemyAlreadyTouch.Add(enemy);
             }
         }
 

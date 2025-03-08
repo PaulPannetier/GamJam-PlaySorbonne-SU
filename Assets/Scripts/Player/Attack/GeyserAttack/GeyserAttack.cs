@@ -38,7 +38,7 @@ public class GeyserAttack : PowerUpAttack
         }
     }
 
-    public void OnGeyserTouch(Geyser geyser, EnemyController enemy)
+    public void OnGeyserTouch(Geyser geyser, IDamageable enemy)
     {
         base.OnTouchEnemy(enemy);
     }

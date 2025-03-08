@@ -1,43 +1,28 @@
 fileFormatVersion: 2
-guid: b87523d4a7d8a644284890c8e2f0682d
+guid: c3ebcf61f69c630479b03e4a648bf41f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 267100453443268146
-    second: badmarchand_idle_0
+      213: -1935257996653612865
+    second: dino-attack_0
   - first:
-      213: 4017824722582619542
-    second: badmarchand_idle_1
+      213: 5339419687034177741
+    second: dino-attack_1
   - first:
-      213: 477262160327586071
-    second: badmarchand_idle_2
+      213: 2192534392249022790
+    second: dino-attack_2
   - first:
-      213: 2527583192906514308
-    second: badmarchand_idle_3
+      213: -452133811433079189
+    second: dino-attack_3
   - first:
-      213: 3624668616524190136
-    second: badmarchand_idle_4
+      213: 6045352182175782682
+    second: dino-attack_4
   - first:
-      213: -6574281900906674898
-    second: badmarchand_idle_5
+      213: 7945909808270628958
+    second: dino-attack_5
   - first:
-      213: 7190705059594610689
-    second: badmarchand_idle_6
-  - first:
-      213: 3508099532663987353
-    second: badmarchand_idle_7
-  - first:
-      213: 6982713050578236889
-    second: badmarchand_idle_8
-  - first:
-      213: -9152532924373359159
-    second: badmarchand_idle_9
-  - first:
-      213: -7434681425840902555
-    second: badmarchand_idle_10
-  - first:
-      213: 3688168771688818911
-    second: badmarchand_idle_11
+      213: 1655265063392523100
+    second: dino-attack_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,12 +118,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: badmarchand_idle_0
+      name: dino-attack_0
       rect:
         serializedVersion: 2
         x: 7
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -148,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 23ee4de727ee4b300800000000000000
-      internalID: 267100453443268146
+      spriteID: fb03ab00b159425e0800000000000000
+      internalID: -1935257996653612865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_1
+      name: dino-attack_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 38
         y: 7
-        width: 18
-        height: 18
+        width: 17
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,19 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 695c15f3c4e22c730800000000000000
-      internalID: 4017824722582619542
+      spriteID: dc846687aed691a40800000000000000
+      internalID: 5339419687034177741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_2
+      name: dino-attack_2
       rect:
         serializedVersion: 2
-        x: 71
+        x: 70
         y: 7
-        width: 18
+        width: 17
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -192,19 +177,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 711bf0bf7639f9600800000000000000
-      internalID: 477262160327586071
+      spriteID: 64974d7c9627d6e10800000000000000
+      internalID: 2192534392249022790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_3
+      name: dino-attack_3
       rect:
         serializedVersion: 2
-        x: 103
+        x: 104
         y: 7
-        width: 18
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,19 +199,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48fb071b587c31320800000000000000
-      internalID: 2527583192906514308
+      spriteID: b6e769aa1b2b9b9f0800000000000000
+      internalID: -452133811433079189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_4
+      name: dino-attack_4
       rect:
         serializedVersion: 2
-        x: 135
+        x: 137
         y: 7
-        width: 18
+        width: 22
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,19 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b15e6407e86d4230800000000000000
-      internalID: 3624668616524190136
+      spriteID: a1758b0b7c765e350800000000000000
+      internalID: 6045352182175782682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_5
+      name: dino-attack_5
       rect:
         serializedVersion: 2
-        x: 167
+        x: 168
         y: 7
-        width: 18
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -258,19 +243,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e258d23717573c4a0800000000000000
-      internalID: -6574281900906674898
+      spriteID: e5853431fda854e60800000000000000
+      internalID: 7945909808270628958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: badmarchand_idle_6
+      name: dino-attack_6
       rect:
         serializedVersion: 2
         x: 199
         y: 7
-        width: 18
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -280,118 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 108adb957248ac360800000000000000
-      internalID: 7190705059594610689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: badmarchand_idle_7
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 99c962130f54fa030800000000000000
-      internalID: 3508099532663987353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: badmarchand_idle_8
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d53334068497e060800000000000000
-      internalID: 6982713050578236889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: badmarchand_idle_9
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 5
-        width: 21
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c5a8a72ccbabf080800000000000000
-      internalID: -9152532924373359159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: badmarchand_idle_10
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56eee8242a4b2d890800000000000000
-      internalID: -7434681425840902555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: badmarchand_idle_11
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 7
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd8633405f10f2330800000000000000
-      internalID: 3688168771688818911
+      spriteID: c5330a02ecea8f610800000000000000
+      internalID: 1655265063392523100
       vertices: []
       indices: 
       edges: []

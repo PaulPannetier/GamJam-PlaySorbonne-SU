@@ -7,7 +7,7 @@ public class Geyser : MonoBehaviour
 {
     private GeyserAttack geyserAttack;
     private Animator animator;
-    private List<EnemyController> enemyAlreadyTouch;
+    private List<IDamageable> enemyAlreadyTouch;
 
     [SerializeField] private float radius;
     [SerializeField] private LayerMask enemyMask;
@@ -17,7 +17,7 @@ public class Geyser : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        enemyAlreadyTouch = new List<EnemyController>();
+        enemyAlreadyTouch = new List<IDamageable>();
     }
 
     public void Launch(GeyserAttack geyserAttack)
@@ -35,11 +35,11 @@ public class Geyser : MonoBehaviour
         Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, radius, enemyMask);
         foreach (Collider2D col in cols)
         {
-            EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
+            IDamageable enemy = col.GetComponent<IDamageable>();
+            if (enemy != null && !enemyAlreadyTouch.Contains(enemy))
             {
-                geyserAttack.OnGeyserTouch(this, enemyController);
-                enemyAlreadyTouch.Add(enemyController);
+                geyserAttack.OnGeyserTouch(this, enemy);
+                enemyAlreadyTouch.Add(enemy);
             }
         }
     }

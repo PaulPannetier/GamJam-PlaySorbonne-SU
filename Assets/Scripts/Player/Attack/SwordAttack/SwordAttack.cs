@@ -5,7 +5,7 @@ using Collider2D = UnityEngine.Collider2D;
 
 public class SwordAttack : PlayerAttack
 {
-    private List<EnemyController> enemyAlreadyTouch;
+    private List<IDamageable> enemyAlreadyTouch;
     private PlayerAnimator playerAnimator;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -28,7 +28,7 @@ public class SwordAttack : PlayerAttack
     protected override void Awake()
     {
         base.Awake();
-        enemyAlreadyTouch = new List<EnemyController>();
+        enemyAlreadyTouch = new List<IDamageable>();
     }
 
     private float GetAnimationLength(string anim)
@@ -93,11 +93,11 @@ public class SwordAttack : PlayerAttack
         Collider2D[] cols = Physics2D.OverlapBoxAll((Vector2)transform.position + currentOffset, currentSize, 0f, enemyMask);
         foreach (Collider2D col in cols)
         {
-            EnemyController enemyController = col.GetComponent<EnemyController>();
-            if(enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
+            IDamageable enemy = col.GetComponent<IDamageable>();
+            if(enemy != null && !enemyAlreadyTouch.Contains(enemy))
             {
-                base.OnTouchEnemy(enemyController);
-                enemyAlreadyTouch.Add(enemyController);
+                base.OnTouchEnemy(enemy);
+                enemyAlreadyTouch.Add(enemy);
             }
         }
 

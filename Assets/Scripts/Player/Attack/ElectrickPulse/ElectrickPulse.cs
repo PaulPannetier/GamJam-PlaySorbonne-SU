@@ -12,7 +12,7 @@ public class ElectrickPulse : MonoBehaviour
     private float angularSpeed;
     private float rotRadius;
     private float duration;
-    private List<EnemyController> enemyAlreadyTouch;
+    private List<IDamageable> enemyAlreadyTouch;
 
     [SerializeField] private string startAnimName;
     [SerializeField] private string idleAnimName;
@@ -41,7 +41,7 @@ public class ElectrickPulse : MonoBehaviour
             this.Invoke(() => { animator.CrossFade(endAnimName, 0f, 0); }, Mathf.Max(0f, duration - length));
         }
 
-        enemyAlreadyTouch = new List<EnemyController>();
+        enemyAlreadyTouch = new List<IDamageable>();
     }
 
     public void Launch(ElectrickPulseAttack playerAttack, PlayerFightController playerFightController, float radius, float angularSpeed, float duration)
@@ -60,11 +60,11 @@ public class ElectrickPulse : MonoBehaviour
         Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position + collisionOffset, collisionRadius, enemyMask);
         foreach (Collider2D col in cols)
         {
-            EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
+            IDamageable enemy = col.GetComponent<IDamageable>();
+            if (enemy != null && !enemyAlreadyTouch.Contains(enemy))
             {
-                playerAttack.OnElectrickPulseTouchEnemy(this, enemyController);
-                enemyAlreadyTouch.Add(enemyController);
+                playerAttack.OnElectrickPulseTouchEnemy(this, enemy);
+                enemyAlreadyTouch.Add(enemy);
             }
         }
 

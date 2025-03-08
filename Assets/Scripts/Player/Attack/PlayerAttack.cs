@@ -41,7 +41,7 @@ public abstract class PlayerAttack : MonoBehaviour
 
     }
 
-    protected virtual void OnTouchEnemy(EnemyController enemy)
+    protected virtual void OnTouchEnemy(IDamageable enemy)
     {
         PlayerInventory playerInventory = fightController.GetComponent<PlayerInventory>();
         float damagePercent = playerInventory.GetBonusDamage(this, enemy);

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2acae0626db9a4adc8a949a341a3c90a
+guid: 6f1fb48c18d85714b8a60d54ed35fd80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6606077922335891465
-    second: Unpeipene_Logo_0
+      213: 7210990723260728252
+    second: salle3_toit2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unpeipene_Logo_0
+      name: salle3_toit2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1118
-        height: 1029
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ff5e90512f7254a0800000000000000
-      internalID: -6606077922335891465
+      spriteID: cb3c79a7bd5921460800000000000000
+      internalID: 7210990723260728252
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Unpeipene_Logo_0: -6606077922335891465
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

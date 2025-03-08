@@ -45,9 +45,9 @@ public class GunAttack : PlayerAttack
         bullet.Launch(dir, this);
     }
 
-    public void OnBulletTouch(Bullet bullet, EnemyController enemyController)
+    public void OnBulletTouch(Bullet bullet, IDamageable enemy)
     {
-        base.OnTouchEnemy(enemyController);
+        base.OnTouchEnemy(enemy);
     }
 
     protected override void Update()

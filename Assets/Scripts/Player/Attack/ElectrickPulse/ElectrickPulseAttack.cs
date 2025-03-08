@@ -12,7 +12,7 @@ public class ElectrickPulseAttack : PowerUpAttack
 
     [SerializeField] private bool drawGizmos;
 
-    public void OnElectrickPulseTouchEnemy(ElectrickPulse electrickPulse, EnemyController enemy)
+    public void OnElectrickPulseTouchEnemy(ElectrickPulse electrickPulse, IDamageable enemy)
     {
         base.OnTouchEnemy(enemy);
     }
