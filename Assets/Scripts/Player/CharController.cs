@@ -28,6 +28,8 @@ public class CharController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public Vector2 GetCurrentDirection() => new Vector2(playerInput.x, playerInput.y);
+
     private void CreateInputs()
     {
         if(InputManager.IsGamePadConnected(ControllerType.Gamepad1))

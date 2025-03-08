@@ -7,6 +7,8 @@ public abstract class PlayerAttack : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] protected float damage;
 
+    public PlayerFightController fightController;
+
     protected virtual void Awake()
     {
 
