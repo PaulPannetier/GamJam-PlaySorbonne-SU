@@ -5,7 +5,6 @@ using System;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
-    
     [Header("State")]
     public IEnemyState currentState;
     public IdleState idleState ; 
@@ -47,6 +46,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     void Update()
     {
         currentState.UpdateState(this);
+        
     }
 
     
