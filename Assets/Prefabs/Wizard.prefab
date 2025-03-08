@@ -173,17 +173,19 @@ MonoBehaviour:
     randDistance: 2
     spawnpoints: []
   chaseState:
-    maxDetectionDistance: 20
-    chaseDistance: 10
+    maxDetectionDistance: 30
+    chaseDistance: 20
     minChaseDuration: 1
     target: {fileID: 0}
     speed: 120
     nextWpDistance: 1
-    attackRange: 2
+    attackRange: 10
     attackStateCooldown: 0.2
+    stopChaseTimer: 0
   attackState:
-    spells: []
-    attackRange: 2
+    spells:
+    - {fileID: 7387248659899455591, guid: cd0d09eccec9bb2458d16116e041d737, type: 3}
+    attackRange: 11
     target: {fileID: 0}
 --- !u!50 &6011810853577670522
 Rigidbody2D:
