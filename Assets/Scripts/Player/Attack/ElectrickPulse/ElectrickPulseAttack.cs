@@ -1,7 +1,7 @@
 using UnityEngine;
 using Collision2D;
 
-public class ElectrickPulseAttack : PlayerAttack
+public class ElectrickPulseAttack : PowerUpAttack
 {
     [SerializeField] private ElectrickPulse electrickPulsePrefab;
     [SerializeField] private int nbElectrickPulse;
@@ -28,7 +28,8 @@ public class ElectrickPulseAttack : PlayerAttack
 
         float angle = this.startAngle;
         float step = 360f / nbElectrickPulse;
-        for (int i = 0; i < nbElectrickPulse; i++)
+        int nbElecPulse = nbElectrickPulse + GetPowerUp();
+        for (int i = 0; i < nbElecPulse; i++)
         {
             Vector2 offset = Useful.Vector2FromAngle(angle * Mathf.Deg2Rad, radius);
             ElectrickPulse electrickPulse = Instantiate(electrickPulsePrefab, (Vector2)transform.position + offset, Quaternion.identity);

@@ -1,9 +1,13 @@
 using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
+using System.Collections.Generic;
+using System;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] private List<Item> items;
+
     [SerializeField] private LayerMask collectableMask;
     [SerializeField] private float collectableRadius;
 
@@ -12,11 +16,47 @@ public class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         nbCoin = 0;
+        items = new List<Item>();
     }
 
     public void CollectCoin(Coin coin)
     {
         nbCoin++;
+    }
+
+    public void EarnCoins(int nbCoins)
+    {
+        nbCoin += nbCoins;
+    }
+
+    public float GetBonusDamagePercent(PlayerAttack attack, IDamageable enemy)
+    {
+        float damagePercent = 0f;
+        foreach (Item item in items)
+        {
+            damagePercent += item.GetBonusDamagePercent(attack, enemy);
+        }
+        return damagePercent;
+    }
+
+    public float GetBonusDamage(PlayerAttack attack, IDamageable enemy)
+    {
+        float damagePercent = 0f;
+        foreach (Item item in items)
+        {
+            damagePercent += item.GetBonusDamage(attack, enemy);
+        }
+        return damagePercent;
+    }
+
+    public int GetPowerUp(PlayerAttack attack)
+    {
+        int powerUp = 0;
+        foreach (Item item in items)
+        {
+            powerUp += item.GetPowerUp(attack);
+        }
+        return powerUp;
     }
 
     private void Update()

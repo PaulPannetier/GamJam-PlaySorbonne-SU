@@ -43,7 +43,11 @@ public abstract class PlayerAttack : MonoBehaviour
 
     protected virtual void OnTouchEnemy(EnemyController enemy)
     {
-        enemy.TakeDamage(damage);
+        PlayerInventory playerInventory = fightController.GetComponent<PlayerInventory>();
+        float damagePercent = playerInventory.GetBonusDamage(this, enemy);
+        float damageBonus = playerInventory.GetBonusDamagePercent(this, enemy);
+
+        enemy.TakeDamage(damage * (1f + damagePercent) + damageBonus);
     }
 
     protected virtual void Launch()

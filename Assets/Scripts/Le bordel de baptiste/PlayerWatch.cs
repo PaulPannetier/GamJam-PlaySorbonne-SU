@@ -38,7 +38,6 @@ public class PlayerWatch : MonoBehaviour
         {
             hit = Physics2D.OverlapCircle(transform.position + (Vector3)layout, checkRadius);
         }
-        Debug.Log(hit == null);
         return hit == null;
     }
 
