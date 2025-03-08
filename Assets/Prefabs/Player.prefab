@@ -292,4 +292,4 @@ MonoBehaviour:
   layout: {x: 100, y: 0}
   moveDuration: 0.5
   isInFuture: 0
-  mainCamera: {fileID: 0}
+  activateKey: 116
