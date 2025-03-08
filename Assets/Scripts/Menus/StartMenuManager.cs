@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class StartMenuManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+  
+  string  lvl1 = "Level1";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+  private void Awake()
+  {
+    //UnityEngine.SceneManagement.SceneLoader.Instance.LoadStartMenuScene();
+    AudioManager.instance.PlaySound("Main Theme", 1f);
+    Debug.Log("AudioManager.instance.PlaySound(\"Main Theme\", 1f);");
+  }
+  public void PlayGame()
+  {
+    //UnityEngine.SceneManagement.SceneLoader.Instance.LoadGameScene(lvl1);
+  }
+    public void QuitGame()
+    {   
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
