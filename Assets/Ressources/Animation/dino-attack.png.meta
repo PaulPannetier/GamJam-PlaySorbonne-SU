@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dino-attack_0: -1935257996653612865
+      dino-attack_1: 5339419687034177741
+      dino-attack_2: 2192534392249022790
+      dino-attack_3: -452133811433079189
+      dino-attack_4: 6045352182175782682
+      dino-attack_5: 7945909808270628958
+      dino-attack_6: 1655265063392523100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

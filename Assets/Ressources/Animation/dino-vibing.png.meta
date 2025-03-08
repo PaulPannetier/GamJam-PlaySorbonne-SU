@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dino-vibing_0: 2073033531873196434
+      dino-vibing_1: -3421913353197401980
+      dino-vibing_2: -3847981976304300936
+      dino-vibing_3: -2539945057467165910
+      dino-vibing_4: -5627298190449788982
+      dino-vibing_5: 9062347314856391105
+      dino-vibing_6: 5753154360425856592
+      dino-vibing_7: 778292318966074529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

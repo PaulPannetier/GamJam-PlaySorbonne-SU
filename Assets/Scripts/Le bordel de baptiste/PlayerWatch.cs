@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWatch : MonoBehaviour
 {
-    [SerializeField] private Vector2 layout = new Vector2(100, 0);
+    //[SerializeField] private Vector2 layout = new Vector2(100, 0);
     [SerializeField] private float moveDuration = 0.5f;
     [SerializeField] private bool isInFuture = false;
     [SerializeField] private InputKey activateKey;
@@ -33,11 +33,12 @@ public class PlayerWatch : MonoBehaviour
         Collider2D hit;
         if (isInFuture)
         {
-            hit = Physics2D.OverlapCircle(transform.position - (Vector3)layout, checkRadius);
+            hit = Physics2D.OverlapCircle(transform.position, checkRadius);
         } else
         {
-            hit = Physics2D.OverlapCircle(transform.position + (Vector3)layout, checkRadius);
+            hit = Physics2D.OverlapCircle(-transform.position, checkRadius);
         }
+        Debug.Log(hit == null);
         return hit == null;
     }
 
@@ -47,15 +48,8 @@ public class PlayerWatch : MonoBehaviour
         {
             return;
         }
-        if (isInFuture)
-        {
-            transform.position -= (Vector3)layout;
-            StartCoroutine(MoveCamera(false));
-        } else
-        {
-            transform.position += (Vector3)layout;
-            StartCoroutine(MoveCamera(true));
-        }
+        
+        gameObject.transform.position = new Vector2(-transform.position.x, transform.position.y);
         isInFuture = !isInFuture;
     }
 
@@ -68,7 +62,7 @@ public class PlayerWatch : MonoBehaviour
     {
         OnPressT();
     }
-
+/*
     private IEnumerator MoveCamera(Boolean toTheFuture)
     {
         if (isOnCooldown)
@@ -102,5 +96,5 @@ public class PlayerWatch : MonoBehaviour
         yield return new WaitForSeconds(moveDuration);
 
         isOnCooldown = false;
-    }
+    }*/
 }
