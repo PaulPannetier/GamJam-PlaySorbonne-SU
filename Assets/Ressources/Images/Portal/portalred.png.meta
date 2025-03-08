@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portalred_0: 6284058804906007939
+      portalred_1: 3303933870277319478
+      portalred_2: 8369744661742267175
+      portalred_3: -5386466981808379067
+      portalred_4: -8536765771075807110
+      portalred_5: -7392173097074408390
+      portalred_6: 6580210749559781564
+      portalred_7: -166197954441889809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
