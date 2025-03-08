@@ -10,12 +10,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Vector2 collisionOffset;
     [SerializeField] private float collisionRadius;
     [SerializeField] private float speed;
-    [SerializeField] private LayerMask enemyMask; 
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float maxLifeDuration = 10f;
+
+    [SerializeField] private bool drawGizmos;
 
     public void Launch(in Vector2 dir, float damage)
     {
         this.dir = dir;
         this.damage = damage;
+        this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }
 
     private void Update()
@@ -35,6 +39,9 @@ public class Bullet : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if (!drawGizmos)
+            return;
+
         Circle.GizmosDraw((Vector2)transform.position + collisionOffset, collisionRadius, Color.red);
     }
 

@@ -3,8 +3,10 @@ using Collision2D;
 
 public class GunAttack : PlayerAttack
 {
-    [SerializeField] private Bullet buletPrefabs;
+    [SerializeField] private Bullet bulletPrefabs;
     [SerializeField] private Vector2 barrelOffset;
+
+    [SerializeField] private bool drawGizmos;
 
     public override void SetPosition(Vector2 position)
     {
@@ -16,8 +18,8 @@ public class GunAttack : PlayerAttack
     {
         base.Launch();
 
-        Bullet bullet = Instantiate(buletPrefabs, (Vector2)transform.position + barrelOffset, Quaternion.identity, transform);
-        Vector2 dir = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.mousePosition) - (Vector2)transform.position;
+        Bullet bullet = Instantiate(bulletPrefabs, (Vector2)transform.position + barrelOffset, Quaternion.identity);
+        Vector2 dir = ((Vector2)Camera.main.ScreenToWorldPoint(InputManager.mousePosition) - (Vector2)transform.position).normalized;
         bullet.Launch(dir, damage);
     }
 
@@ -28,6 +30,9 @@ public class GunAttack : PlayerAttack
 
     private void OnDrawGizmosSelected()
     {
-        Circle.GizmosDraw((Vector2)transform.position + barrelOffset, 0.2f, Color.green);
+        if(!drawGizmos)
+            return;
+
+        Circle.GizmosDraw((Vector2)transform.position + barrelOffset, 0.1f, Color.green);
     }
 }

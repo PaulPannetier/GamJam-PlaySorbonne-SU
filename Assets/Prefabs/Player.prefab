@@ -223,15 +223,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputAttack1:
-    keysKeyboard: 
-    keyGamepad1: 
+    keysKeyboard: 43010000
+    keyGamepad1: 56010000
     keyGamepad2: 
     keyGamepad3: 
     keyGamepad4: 
-    controllerType: 0
+    controllerType: 6
   inputAttack2:
-    keysKeyboard: 
-    keyGamepad1: 
+    keysKeyboard: 44010000
+    keyGamepad1: 57010000
     keyGamepad2: 
     keyGamepad3: 
     keyGamepad4: 
