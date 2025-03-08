@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4ff530434238c4785e22011b583bfa, type: 3}
-  m_Name: ItemEffect
+  m_Script: {fileID: 11500000, guid: b3a726dbedd4cba40b219ca5b34d5ceb, type: 3}
+  m_Name: "pierre dor\xE9e"
   m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 11400000, guid: b672c53021f07da4887bd11c69158b7c, type: 2}
+  value: 0

@@ -24,6 +24,11 @@ public class PlayerInventory : MonoBehaviour
         nbCoin++;
     }
 
+    public void AddItem(Item item)
+    {
+        items.Add(item);
+    }
+
     public void EarnCoins(int nbCoins)
     {
         nbCoin += nbCoins;
