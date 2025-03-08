@@ -20,7 +20,12 @@ public class GunAttack : PlayerAttack
 
         Bullet bullet = Instantiate(bulletPrefabs, (Vector2)transform.position + barrelOffset, Quaternion.identity);
         Vector2 dir = ((Vector2)Camera.main.ScreenToWorldPoint(InputManager.mousePosition) - (Vector2)transform.position).normalized;
-        bullet.Launch(dir, damage);
+        bullet.Launch(dir, this);
+    }
+
+    public void OnBulletTouch(Bullet bullet, EnemyController enemyController)
+    {
+        base.OnTouchEnemy(enemyController);
     }
 
     protected override void Update()

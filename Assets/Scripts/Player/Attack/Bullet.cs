@@ -5,7 +5,7 @@ using Collider2D = UnityEngine.Collider2D;
 public class Bullet : MonoBehaviour
 {
     private Vector2 dir;
-    private float damage;
+    private GunAttack gunAttack;
 
     [SerializeField] private Vector2 collisionOffset;
     [SerializeField] private float collisionRadius;
@@ -15,10 +15,10 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private bool drawGizmos;
 
-    public void Launch(in Vector2 dir, float damage)
+    public void Launch(in Vector2 dir, GunAttack gunAttack)
     {
         this.dir = dir;
-        this.damage = damage;
+        this.gunAttack = gunAttack;
         this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }
 
@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
             EnemyController enemyController = col.GetComponent<EnemyController>();
             if (enemyController != null)
             {
-                enemyController.TakeDamage(damage);
+                gunAttack.OnBulletTouch(this, enemyController);
             }
         }
 
