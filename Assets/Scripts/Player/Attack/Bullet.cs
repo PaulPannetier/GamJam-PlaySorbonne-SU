@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     public void Launch(in Vector2 dir, GunAttack gunAttack)
     {
         this.dir = dir;
+        transform.rotation = Quaternion.Euler(0f, 0f, Useful.AngleHori(Vector2.zero, dir) * Mathf.Rad2Deg);
         this.gunAttack = gunAttack;
         this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }

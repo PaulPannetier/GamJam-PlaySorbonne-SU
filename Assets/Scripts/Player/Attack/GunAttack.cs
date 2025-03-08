@@ -3,15 +3,24 @@ using Collision2D;
 
 public class GunAttack : PlayerAttack
 {
+    private SpriteRenderer spriteRenderer;
+
     [SerializeField] private Bullet bulletPrefabs;
     [SerializeField] private Vector2 barrelOffset;
 
     [SerializeField] private bool drawGizmos;
 
-    public override void SetPosition(Vector2 position)
+    protected override void Awake()
     {
-        base.SetPosition(position);
+        base.Awake();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public override void SetPosition(Vector2 position, bool reversed)
+    {
+        base.SetPosition(position, reversed);
         transform.position = position;
+        spriteRenderer.flipX = reversed;
     }
 
     protected override void Launch()

@@ -7,6 +7,17 @@ public abstract class PlayerAttack : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] protected float damage;
 
+    protected virtual void Awake()
+    {
+
+    }
+
+    protected virtual void Start()
+    {
+
+    }
+
+
     protected virtual void Update()
     {
 
@@ -22,7 +33,8 @@ public abstract class PlayerAttack : MonoBehaviour
         return false;
     }
 
-    public virtual void SetPosition(Vector2 position)
+    //For putting the object in the hand of the player
+    public virtual void SetPosition(Vector2 position, bool reversed)
     {
 
     }

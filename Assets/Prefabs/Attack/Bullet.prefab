@@ -129,4 +129,5 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
+  maxLifeDuration: 10
   drawGizmos: 0
