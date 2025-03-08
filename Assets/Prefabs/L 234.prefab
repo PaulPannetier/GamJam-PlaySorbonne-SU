@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240972940767427862}
   - component: {fileID: 5304418403388902446}
+  - component: {fileID: 2885417522449320510}
   m_Layer: 0
   m_Name: L 234
   m_TagString: Untagged
@@ -48,6 +49,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &2885417522449320510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25044958870762879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9670789807d494380048ad0a8fe996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 3976461524222943525}
+  - {fileID: 4787373673995006879}
+  - {fileID: 7035123796468849649}
 --- !u!1 &1624320050826441856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3976461524222943525}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

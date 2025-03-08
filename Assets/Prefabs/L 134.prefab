@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240972940767427862}
   - component: {fileID: 5304418403388902446}
+  - component: {fileID: 1688936119580715203}
   m_Layer: 0
   m_Name: L 134
   m_TagString: Untagged
@@ -48,6 +49,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1688936119580715203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25044958870762879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9670789807d494380048ad0a8fe996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 841403117460381436}
+  - {fileID: 3414608452033515292}
+  - {fileID: 9072265467789320239}
 --- !u!1 &841403117460381436
 GameObject:
   m_ObjectHideFlags: 0

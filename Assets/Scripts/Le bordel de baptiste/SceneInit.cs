@@ -4,11 +4,13 @@ public class SceneInit : MonoBehaviour
 {
     private Camera mainCamera;
 
-    [SerializeField] private GameObject prefabScene;
+    [SerializeField] private GameObject[] prefabScenes;
     [SerializeField] private GameObject playerPrefab;
 
     void Awake()
     {
+        GameObject prefabScene = prefabScenes.GetRandom();
+
         if (prefabScene == null)
         {
             Debug.LogError("Prefab not found in Resources folder!");
@@ -30,6 +32,7 @@ public class SceneInit : MonoBehaviour
         {
             GameObject[] spawnPoints = scriptInstance.spawnPoints;
             GameObject randomSpawn = spawnPoints.GetRandom();
+            Debug.Log(randomSpawn.transform);
 
             GameObject player = Instantiate(playerPrefab, randomSpawn.transform.position, Quaternion.identity);
             PlayerWatch scriptInstance2 = player.GetComponent<PlayerWatch>();
