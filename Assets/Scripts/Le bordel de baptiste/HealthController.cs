@@ -19,6 +19,8 @@ public class HealthController : MonoBehaviour
     //[SerializeField] private int shield;
     [SerializeField] private bool isDead; 
 
+    private Animator animator;
+
     public void TakeDamage(int amout)
     {
         //coder des degats 
@@ -27,6 +29,7 @@ public class HealthController : MonoBehaviour
         {
             currentLife = 0;
             isDead = true;
+            animator.SetBool("isDead", true);
         }
 
         UpdateUI();
@@ -47,6 +50,7 @@ public class HealthController : MonoBehaviour
         current_nb_hearts = 3;
         currentLife = current_nb_hearts * 2;
         UpdateUI();
+        animator = GetComponent<Animator>();
     }
 
     private void UpdateUI()

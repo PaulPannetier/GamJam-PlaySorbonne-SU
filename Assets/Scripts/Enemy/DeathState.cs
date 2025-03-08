@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class DeathState : IEnemyState
 {
     [SerializeField] private float timeBeforeDestroy = 1.5f;
