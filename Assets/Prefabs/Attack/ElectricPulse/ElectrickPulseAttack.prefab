@@ -48,7 +48,7 @@ MonoBehaviour:
   damage: 3
   fightController: {fileID: 0}
   electrickPulsePrefab: {fileID: 5681133239623743029, guid: 78a8bdb2d390fd945acca62eee9cddf1, type: 3}
-  nbElectrickPulse: 8
+  nbElectrickPulse: 10
   radius: 3.5
   angularSpeed: 280
   duration: 5
