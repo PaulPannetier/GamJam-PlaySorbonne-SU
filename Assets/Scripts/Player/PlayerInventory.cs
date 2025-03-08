@@ -2,7 +2,6 @@ using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
 using System.Collections.Generic;
-using System;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private LayerMask collectableMask;
     [SerializeField] private float collectableRadius;
 
-    [SerializeField, ShowOnly] private int nbCoins;
+    [SerializeField] private int nbCoins;
 
     private void Awake()
     {

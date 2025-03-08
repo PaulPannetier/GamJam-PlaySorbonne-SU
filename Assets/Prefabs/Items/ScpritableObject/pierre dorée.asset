@@ -15,3 +15,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: b672c53021f07da4887bd11c69158b7c, type: 2}
   value: 0
+  icon: {fileID: 0}
