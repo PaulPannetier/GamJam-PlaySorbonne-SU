@@ -48,6 +48,7 @@ public class CharController : MonoBehaviour
         bool d = InputManager.GetKey(down);
         float x = r && l ? 0f : (r || l ? (r ? 1f : -1f) : 0f);
         float y = u && d ? 0f : (u || d ? (u ? 1f : -1f) : 0f);
+
         playerInput = new Inputs(x, y, (int)x.Sign(), (int)y.Sign());
     }
 

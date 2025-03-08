@@ -40,7 +40,6 @@ public class EnemyController : MonoBehaviour, IDamageable
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentState = idleState;
-
         currentLife = maxLife;
     }
 

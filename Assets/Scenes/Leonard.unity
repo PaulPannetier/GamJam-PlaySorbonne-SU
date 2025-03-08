@@ -181,9 +181,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 603808141}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+--- !u!4 &312219227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2054632362426302455, guid: c547f1da06dc47f4f917bb93b1a7a160, type: 3}
+  m_PrefabInstance: {fileID: 132349575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,61 +329,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &603808139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 603808141}
-  - component: {fileID: 603808140}
-  m_Layer: 0
-  m_Name: SwordAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &603808140
+--- !u!114 &603808140 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+  m_PrefabInstance: {fileID: 3678174821728230846}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603808139}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d25c3999eb7bc5f458c25ef0f40f556b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
-  damage: 1
-  fightController: {fileID: 0}
-  offsetHorizontalHitbox: {x: 0, y: 0}
-  horizontalHitboxSize: {x: 0, y: 0}
-  offsetVerticalHitbox: {x: 0, y: 0}
-  verticalHitboxSize: {x: 0, y: 0}
-  attackSideAnimName: 
-  attackUpAnimName: 
-  attackDownAnimName: 
-  drawGizmos: 0
---- !u!4 &603808141
+--- !u!4 &603808141 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+  m_PrefabInstance: {fileID: 3678174821728230846}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603808139}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,63 +671,107 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 9123912760989040376, guid: 4223d0c0e3dfc8e43b7501429dac6154, type: 3}
   m_PrefabInstance: {fileID: 633772099}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6111471835196102036
+--- !u!1001 &3678174821728230846
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 312219227}
     m_Modifications:
-    - target: {fileID: 236135426069592947, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
-      propertyPath: m_Name
-      value: musicPrefabs
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7728055796259303051, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+    - target: {fileID: 860111061531877082, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422360361143575038, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: m_Name
+      value: SwordAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: drawGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: attackUpAnimName
+      value: attackUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: enemyMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: attackDownAnimName
+      value: attackDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: verticalHitboxSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: verticalHitboxSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: horizontalHitboxSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: horizontalHitboxSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: offsetVerticalHitbox.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733530890551052571, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
+      propertyPath: offsetHorizontalHitbox.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9270b3fc16f4aaf4d9ae1b68274d6497, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 3c00fe99c3638c4429ac892920426cad, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -767,5 +780,3 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 633772099}
   - {fileID: 132349575}
-  - {fileID: 603808141}
-  - {fileID: 6111471835196102036}
