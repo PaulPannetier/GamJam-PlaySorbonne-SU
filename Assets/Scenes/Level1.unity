@@ -50889,6 +50889,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6989606427009844402, guid: 16d9c7b9b35fabc48bb10dd6253ab776, type: 3}
+      propertyPath: walkSpeed
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7188828713345734009, guid: 16d9c7b9b35fabc48bb10dd6253ab776, type: 3}
       propertyPath: _attack1
       value: 

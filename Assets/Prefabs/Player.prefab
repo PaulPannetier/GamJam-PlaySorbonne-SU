@@ -277,6 +277,7 @@ MonoBehaviour:
   maxhearts: 10
   current_nb_hearts: 3
   currentLife: 6
+  gameOverPanel: {fileID: 0}
   isDead: 0
 --- !u!114 &181497419751235113
 MonoBehaviour:
@@ -330,5 +331,8 @@ MonoBehaviour:
   collectableMask:
     serializedVersion: 2
     m_Bits: 256
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 0
   collectableRadius: 4
   nbCoins: 0
