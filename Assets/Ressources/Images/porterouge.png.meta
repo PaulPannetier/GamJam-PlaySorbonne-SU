@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      porterouge_0: -5682887678673380299
+      porterouge_1: -3396318028966454578
+      porterouge_2: 8806743993325205320
+      porterouge_3: 231959212484979421
+      porterouge_4: -1375409805960174566
+      porterouge_5: -8508910067567886371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

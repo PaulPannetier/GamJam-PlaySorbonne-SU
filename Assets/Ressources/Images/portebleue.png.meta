@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portebleue_0: 1164308213534593034
+      portebleue_1: 826243658943356043
+      portebleue_2: -7264484068355565051
+      portebleue_3: -1270058800644720497
+      portebleue_4: 5493428489827958482
+      portebleue_5: 2355402387913675712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
