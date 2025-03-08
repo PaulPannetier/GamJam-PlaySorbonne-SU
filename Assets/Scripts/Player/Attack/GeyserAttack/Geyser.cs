@@ -1,11 +1,13 @@
 using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
+using System.Collections.Generic;
 
 public class Geyser : MonoBehaviour
 {
     private GeyserAttack geyserAttack;
     private Animator animator;
+    private List<EnemyController> enemyAlreadyTouch;
 
     [SerializeField] private float radius;
     [SerializeField] private LayerMask enemyMask;
@@ -15,6 +17,7 @@ public class Geyser : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        enemyAlreadyTouch = new List<EnemyController>();
     }
 
     public void Launch(GeyserAttack geyserAttack)
@@ -33,9 +36,10 @@ public class Geyser : MonoBehaviour
         foreach (Collider2D col in cols)
         {
             EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null)
+            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
             {
                 geyserAttack.OnGeyserTouch(this, enemyController);
+                enemyAlreadyTouch.Add(enemyController);
             }
         }
     }

@@ -1,15 +1,18 @@
 using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
+using System.Collections.Generic;
 
 public class ElectrickPulse : MonoBehaviour
 {
     private Animator animator;
     private ElectrickPulseAttack playerAttack;
+    private PlayerFightController playerFightController;
     private float currentAngle; //in deg
     private float angularSpeed;
     private float rotRadius;
     private float duration;
+    private List<EnemyController> enemyAlreadyTouch;
 
     [SerializeField] private string startAnimName;
     [SerializeField] private string idleAnimName;
@@ -38,14 +41,16 @@ public class ElectrickPulse : MonoBehaviour
             this.Invoke(() => { animator.CrossFade(endAnimName, 0f, 0); }, Mathf.Max(0f, duration - length));
         }
 
+        enemyAlreadyTouch = new List<EnemyController>();
     }
 
-    public void Launch(ElectrickPulseAttack playerAttack, float radius, float angularSpeed, float duration)
+    public void Launch(ElectrickPulseAttack playerAttack, PlayerFightController playerFightController, float radius, float angularSpeed, float duration)
     {
         this.playerAttack = playerAttack;
         this.rotRadius = radius;
         this.angularSpeed = angularSpeed;
         this.duration = duration;
+        this.playerFightController = playerFightController;
         currentAngle = Useful.AngleHori(playerAttack.transform.position, transform.position) * Mathf.Rad2Deg;
         this.Invoke(() => Destroy(gameObject), duration);
     }
@@ -56,16 +61,24 @@ public class ElectrickPulse : MonoBehaviour
         foreach (Collider2D col in cols)
         {
             EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null)
+            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
             {
                 playerAttack.OnElectrickPulseTouchEnemy(this, enemyController);
+                enemyAlreadyTouch.Add(enemyController);
             }
         }
 
         currentAngle += angularSpeed * Time.deltaTime;
         currentAngle %= 360f;
         Vector2 offset = Useful.Vector2FromAngle(currentAngle * Mathf.Deg2Rad, rotRadius);
-        transform.position = (Vector2)playerAttack.transform.position + offset;
+        transform.position = (Vector2)playerFightController.transform.position + offset;
+
+        Vector2 normal = offset.NormalVector();
+        Vector2 offset2 = Useful.Vector2FromAngle((currentAngle + 1f) * Mathf.Deg2Rad, rotRadius);
+        if (normal.Dot(offset2 - offset) > 0f)
+            normal = -normal;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, Useful.AngleHori(Vector2.zero, normal) * Mathf.Rad2Deg);
     }
 
     private void OnDrawGizmosSelected()

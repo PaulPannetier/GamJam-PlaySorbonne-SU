@@ -32,8 +32,8 @@ public class ElectrickPulseAttack : PlayerAttack
         {
             Vector2 offset = Useful.Vector2FromAngle(angle * Mathf.Deg2Rad, radius);
             ElectrickPulse electrickPulse = Instantiate(electrickPulsePrefab, (Vector2)transform.position + offset, Quaternion.identity);
-            electrickPulse.Launch(this, radius, angle, duration);
-            angle += step;
+            electrickPulse.Launch(this, fightController, radius, angularSpeed, duration);
+            angle = (angle + step) % 360f;
         }
     }
 

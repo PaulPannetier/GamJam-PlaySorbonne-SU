@@ -1,11 +1,13 @@
 using UnityEngine;
 using Collision2D;
 using Collider2D = UnityEngine.Collider2D;
+using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
     private Vector2 dir;
     private GunAttack gunAttack;
+    private List<EnemyController> enemyAlreadyTouch;
 
     [SerializeField] private Vector2 collisionOffset;
     [SerializeField] private float collisionRadius;
@@ -20,6 +22,7 @@ public class Bullet : MonoBehaviour
         this.dir = dir;
         transform.rotation = Quaternion.Euler(0f, 0f, Useful.AngleHori(Vector2.zero, dir) * Mathf.Rad2Deg);
         this.gunAttack = gunAttack;
+        enemyAlreadyTouch = new List<EnemyController>();
         this.Invoke(() => Destroy(gameObject), maxLifeDuration);
     }
 
@@ -29,9 +32,10 @@ public class Bullet : MonoBehaviour
         foreach (Collider2D col in cols)
         {
             EnemyController enemyController = col.GetComponent<EnemyController>();
-            if (enemyController != null)
+            if (enemyController != null && !enemyAlreadyTouch.Contains(enemyController))
             {
                 gunAttack.OnBulletTouch(this, enemyController);
+                enemyAlreadyTouch.Add(enemyController);
             }
         }
 
